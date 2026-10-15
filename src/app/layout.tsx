@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,13 @@ const notoBengali = Noto_Sans_Bengali({
   variable: "--font-noto-bengali",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#062b41",
+};
 
 export const metadata: Metadata = {
   title: "আবাদ লিমিটেড | Abad Limited",

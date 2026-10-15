@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { StoredLead } from "@/lib/types";
-import { dataMode, isSupabaseConfigured } from "@/lib/config";
+import { isSupabaseConfigured } from "@/lib/config";
 import {
   ShieldAlert,
   Search,
@@ -150,15 +150,6 @@ export default function AdminPage() {
         </div>
       </header>
 
-      {/* Demo / Local Notice */}
-      {!isSupabaseConfigured && (
-        <div className="bg-amber-500/10 border-b border-amber-500/20 px-6 py-3 text-xs text-amber-900 flex items-center gap-2">
-          <Info className="w-4 h-4 text-amber-600 shrink-0" />
-          <span>
-            <strong>লোকাল ডেমো প্রিভিউ:</strong> ডাটাবেজ ক্রেডেনশিয়াল সংযুক্ত না থাকায় সিস্টেমটি মেমোরি ডেটার ওপর চলছে। কোনো আসল ভিজিটর তথ্য এখানে প্রদর্শিত বা সংরক্ষিত নেই।
-          </span>
-        </div>
-      )}
 
       {/* Main Admin Content */}
       <main className="flex-1 max-w-[1400px] w-full mx-auto p-6 flex flex-col gap-6">

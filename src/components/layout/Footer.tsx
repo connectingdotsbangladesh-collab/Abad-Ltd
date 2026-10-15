@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Locale, SiteCopy } from "@/lib/types";
-import { siteConfig, dataMode } from "@/lib/config";
+import { siteConfig } from "@/lib/config";
 
 interface FooterProps {
   locale: Locale;
@@ -43,18 +43,6 @@ export function Footer({ locale, copy }: FooterProps) {
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed mt-2">
               {copy.footer.description}
             </p>
-
-            {/* Honest Demo Mode Indicator */}
-            {dataMode === "demo" && (
-              <div className="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-slate-300 text-xs px-3 py-1.5 rounded-lg mt-2">
-                <span className="w-2 h-2 rounded-full bg-accent-harvest animate-pulse" />
-                <span>
-                  {isBn
-                    ? "ডেমো রিভিউ মোড: কোনো ব্যক্তিগত তথ্য সংরক্ষণ করা হচ্ছে না।"
-                    : "Demo review mode: no personal data is stored."}
-                </span>
-              </div>
-            )}
           </div>
 
           {/* Column 1: Explore */}

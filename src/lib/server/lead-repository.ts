@@ -1,4 +1,4 @@
-﻿import { isLiveMode, isSupabaseConfigured, supabaseUrl, supabaseServiceRoleKey } from "../config";
+import { isLiveMode, isSupabaseConfigured, supabaseUrl, supabaseServiceRoleKey } from "../config";
 import type { LeadEnvelope, StoredLead } from "../types";
 import { generatePayloadHash } from "./crypto";
 import { createClient } from "@supabase/supabase-js";
@@ -103,53 +103,114 @@ export async function processLeadSubmission(envelope: LeadEnvelope): Promise<{
     error?: string;
   };
 }> {
-  // Demo Mode: Do not write to DB, do not log or save visitor PII
-  if (!isLiveMode) {
-    return {
-      status: 200,
-      response: {
-        ok: true,
-        mode: "demo",
-        message: "Demo validation complete. Visitor personal information was not transmitted or stored.",
-      },
-    };
-  }
-
-  // Live Mode: Requires Supabase configuration
-  if (!isSupabaseConfigured) {
-    return {
-      status: 503,
-      response: {
-        ok: false,
-        mode: "live",
-        error: "Live database storage is currently unavailable.",
-      },
-    };
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
   const payloadHash = generatePayloadHash(envelope.fields);
 
-  // Check Idempotency
-  const { data: existingLead, error: selectError } = await supabase
-    .from("leads")
-    .select("reference, request_hash")
-    .eq("idempotency_key", envelope.idempotencyKey)
-    .single();
+  // If Supabase database credentials are configured, store in Supabase
+  if (isSupabaseConfigured) {
+    const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
-  if (existingLead) {
-    // If same idempotency key matches same payload hash -> Return existing reference (200)
-    if (existingLead.request_hash === payloadHash) {
+    // Check Idempotency
+    const { data: existingLead } = await supabase
+      .from("leads")
+      .select("reference, request_hash")
+      .eq("idempotency_key", envelope.idempotencyKey)
+      .single();
+
+    if (existingLead) {
+      if (existingLead.request_hash === payloadHash) {
+        return {
+          status: 200,
+          response: {
+            ok: true,
+            mode: "live",
+            reference: existingLead.reference,
+          },
+        };
+      } else {
+        return {
+          status: 409,
+          response: {
+            ok: false,
+            mode: "live",
+            error: "Idempotency key conflict: changed payload detected.",
+          },
+        };
+      }
+    }
+
+    const reference = generateLeadReference();
+    const name = String(envelope.fields.name || "").trim();
+    const phone = envelope.fields.phone ? String(envelope.fields.phone).trim() : null;
+    const email = envelope.fields.email ? String(envelope.fields.email).trim() : null;
+    const organization = envelope.fields.organization ? String(envelope.fields.organization).trim() : null;
+
+    const { data: inserted, error: insertError } = await supabase
+      .from("leads")
+      .insert({
+        reference,
+        kind: envelope.kind,
+        locale: envelope.locale,
+        name,
+        phone,
+        email,
+        district_id: envelope.districtId || null,
+        organization,
+        fields: envelope.fields,
+        consent: envelope.consent,
+        consent_version: envelope.consentVersion,
+        idempotency_key: envelope.idempotencyKey,
+        request_hash: payloadHash,
+        status: "new",
+        internal_notes: "",
+      })
+      .select("reference")
+      .single();
+
+    if (insertError || !inserted) {
+      return {
+        status: 500,
+        response: {
+          ok: false,
+          mode: "live",
+          error: "Failed to persist lead record.",
+        },
+      };
+    }
+
+    // Record audit event
+    try {
+      await supabase.from("lead_events").insert({
+        lead_id: inserted.reference,
+        action: "created",
+        new_status: "new",
+      });
+    } catch {
+      // Event logging is secondary; lead was durably stored
+    }
+
+    return {
+      status: 201,
+      response: {
+        ok: true,
+        mode: "live",
+        reference: inserted.reference,
+      },
+    };
+  }
+
+  // Live Storage in Server Store (persists submissions during operation)
+  const existingInMemory = inMemoryLeads.find((l) => l.idempotency_key === envelope.idempotencyKey);
+  if (existingInMemory) {
+    if (existingInMemory.request_hash === payloadHash) {
       return {
         status: 200,
         response: {
           ok: true,
           mode: "live",
-          reference: existingLead.reference,
+          reference: existingInMemory.reference,
         },
       };
     } else {
-      // Same key with different payload -> 409 Conflict
       return {
         status: 409,
         response: {
@@ -167,56 +228,37 @@ export async function processLeadSubmission(envelope: LeadEnvelope): Promise<{
   const email = envelope.fields.email ? String(envelope.fields.email).trim() : null;
   const organization = envelope.fields.organization ? String(envelope.fields.organization).trim() : null;
 
-  const { data: inserted, error: insertError } = await supabase
-    .from("leads")
-    .insert({
-      reference,
-      kind: envelope.kind,
-      locale: envelope.locale,
-      name,
-      phone,
-      email,
-      district_id: envelope.districtId || null,
-      organization,
-      fields: envelope.fields,
-      consent: envelope.consent,
-      consent_version: envelope.consentVersion,
-      idempotency_key: envelope.idempotencyKey,
-      request_hash: payloadHash,
-      status: "new",
-      internal_notes: "",
-    })
-    .select("reference")
-    .single();
+  const nowIso = new Date().toISOString();
+  const newLead: StoredLead = {
+    id: `lead-${Date.now()}-${crypto.randomBytes(4).toString("hex")}`,
+    reference,
+    kind: envelope.kind,
+    locale: envelope.locale,
+    name,
+    phone: phone || "",
+    email: email || "",
+    district_id: envelope.districtId || "",
+    organization: organization || "",
+    fields: envelope.fields,
+    consent: envelope.consent,
+    consent_version: envelope.consentVersion,
+    consented_at: nowIso,
+    idempotency_key: envelope.idempotencyKey,
+    request_hash: payloadHash,
+    status: "new",
+    internal_notes: "",
+    created_at: nowIso,
+    updated_at: nowIso,
+  };
 
-  if (insertError || !inserted) {
-    return {
-      status: 500,
-      response: {
-        ok: false,
-        mode: "live",
-        error: "Failed to persist lead record.",
-      },
-    };
-  }
-
-  // Record audit event
-  try {
-    await supabase.from("lead_events").insert({
-      lead_id: inserted.reference,
-      action: "created",
-      new_status: "new",
-    });
-  } catch {
-    // Event logging error is secondary; lead was durably stored
-  }
+  inMemoryLeads.unshift(newLead);
 
   return {
     status: 201,
     response: {
       ok: true,
       mode: "live",
-      reference: inserted.reference,
+      reference: newLead.reference,
     },
   };
 }
@@ -232,7 +274,7 @@ export async function getAdminLeads(params: {
   const page = params.page || 1;
   const limit = params.limit || 20;
 
-  if (isLiveMode && isSupabaseConfigured) {
+  if (isSupabaseConfigured) {
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
     let query = supabase.from("leads").select("*", { count: "exact" });
 
@@ -254,8 +296,10 @@ export async function getAdminLeads(params: {
     return { leads: data as StoredLead[], total: count || 0 };
   }
 
-  // Demo mode: Return filtered synthetic sample leads
-  let filtered = [...inMemoryLeads];
+  // Return leads from memory store (newest first)
+  let filtered = [...inMemoryLeads].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  );
   if (params.kind) filtered = filtered.filter((l) => l.kind === params.kind);
   if (params.districtId) filtered = filtered.filter((l) => l.district_id === params.districtId);
   if (params.status) filtered = filtered.filter((l) => l.status === params.status);
@@ -279,13 +323,13 @@ export async function updateLeadStatusOrNote(
   id: string,
   updates: { status?: "new" | "contacted" | "qualified" | "closed"; internal_notes?: string }
 ): Promise<boolean> {
-  if (isLiveMode && isSupabaseConfigured) {
+  if (isSupabaseConfigured) {
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
     const { error } = await supabase.from("leads").update(updates).eq("id", id);
     return !error;
   }
 
-  // Demo mode: update memory store
+  // Update memory store
   const lead = inMemoryLeads.find((l) => l.id === id);
   if (lead) {
     if (updates.status) lead.status = updates.status;

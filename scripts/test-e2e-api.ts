@@ -1,4 +1,4 @@
-﻿import assert from "assert";
+import assert from "assert";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -47,8 +47,8 @@ async function runTests() {
   assert.strictEqual(invalidRes.status, 404, `Expected 404 for invalid slug, got ${invalidRes.status}`);
   console.log("✓ Invalid service slug returned 404 localized not found");
 
-  // 4. Test Demo Lead Submission
-  console.log("4. Testing POST /api/leads with valid demo payload...");
+  // 4. Test Live Lead Submission
+  console.log("4. Testing POST /api/leads with valid lead payload...");
   const validPayload = {
     kind: "farmer",
     locale: "bn",
@@ -69,11 +69,12 @@ async function runTests() {
     headers: { "Content-Type": "application/json", Host: "localhost:3000", Origin: "http://localhost:3000" },
     body: JSON.stringify(validPayload),
   });
-  assert.strictEqual(leadRes.status, 200);
+  assert([200, 201].includes(leadRes.status), `Expected 200 or 201, got ${leadRes.status}`);
   const leadData = await leadRes.json();
   assert.strictEqual(leadData.ok, true);
-  assert.strictEqual(leadData.mode, "demo");
-  console.log("✓ Demo lead submission returned 200 with mode=demo");
+  assert.strictEqual(leadData.mode, "live");
+  assert(leadData.reference?.startsWith("ABAD-"), `Expected ABAD reference, got ${leadData.reference}`);
+  console.log(`✓ Live lead submission returned ${leadRes.status} with reference: ${leadData.reference}`);
 
   // 5. Test Lead Validation Failure (Invalid phone)
   console.log("5. Testing POST /api/leads with invalid phone prefix...");

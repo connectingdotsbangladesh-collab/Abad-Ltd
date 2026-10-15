@@ -65,18 +65,18 @@ export function ConnectModal({ isOpen, onClose, locale }: ConnectModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="connect-dialog-title"
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-6 sm:p-8 border border-border"
+        className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-4 sm:p-8 border border-border max-h-[92vh] overflow-y-auto my-auto"
       >
-        <div className="flex items-center justify-between pb-4 border-b border-border">
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl overflow-hidden bg-brand-navy shadow-soft border border-border relative shrink-0">
+        <div className="flex items-center justify-between pb-3.5 border-b border-border">
+          <div className="flex items-center gap-2.5 sm:gap-3.5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-brand-navy shadow-soft border border-border relative shrink-0">
               <Image
                 src="/brand/abad-logo.jpg"
                 alt="Abad Limited"
@@ -86,12 +86,12 @@ export function ConnectModal({ isOpen, onClose, locale }: ConnectModalProps) {
               />
             </div>
             <div>
-              <h2 id="connect-dialog-title" className="text-xl sm:text-2xl font-bold text-brand-navy">
+              <h2 id="connect-dialog-title" className="text-lg sm:text-2xl font-bold text-brand-navy leading-tight">
                 {isBn ? "আবাদ-এর সঙ্গে যুক্ত হোন" : "Connect with Abad"}
               </h2>
-              <p className="text-xs sm:text-sm text-muted mt-0.5">
+              <p className="text-[11px] sm:text-sm text-muted mt-0.5">
                 {isBn
-                  ? "আপনার ভূমিকা নির্বাচন করে সরাসরি প্রাসঙ্গিক ফর্মে যান"
+                  ? "আপনার ভূমিকা নির্বাচন করে প্রাসঙ্গিক ফর্মে যান"
                   : "Choose your role to proceed to the relevant enquiry journey"}
               </p>
             </div>
@@ -99,13 +99,13 @@ export function ConnectModal({ isOpen, onClose, locale }: ConnectModalProps) {
           <button
             onClick={onClose}
             aria-label={isBn ? "বন্ধ করুন" : "Close dialog"}
-            className="p-2 text-muted hover:text-brand-navy rounded-full hover:bg-canvas transition-colors"
+            className="p-1.5 sm:p-2 text-muted hover:text-brand-navy rounded-full hover:bg-canvas transition-colors shrink-0"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-4">
+        <div className="mt-4 sm:mt-6 grid grid-cols-1 gap-3 sm:gap-4">
           {options.map((opt, i) => {
             const Icon = opt.icon;
             return (
@@ -113,7 +113,7 @@ export function ConnectModal({ isOpen, onClose, locale }: ConnectModalProps) {
                 key={i}
                 href={opt.href}
                 onClick={onClose}
-                className="group flex items-start gap-4 p-4 sm:p-5 rounded-xl border border-border hover:border-brand-green hover:shadow-soft transition-all duration-200 bg-canvas/40 hover:bg-white"
+                className="group flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-xl border border-border hover:border-brand-green hover:shadow-soft transition-all duration-200 bg-canvas/40 hover:bg-white"
               >
                 <div className={`p-3 rounded-lg border ${opt.color} group-hover:scale-105 transition-transform`}>
                   <Icon className="w-6 h-6" />

@@ -1,10 +1,10 @@
-﻿import type { SiteConfig } from "./types";
+import type { SiteConfig } from "./types";
 import rawConfig from "../../site.config.json";
 
 export const siteConfig: SiteConfig = rawConfig as SiteConfig;
 
 export const dataMode: "demo" | "live" =
-  (process.env.ABAD_DATA_MODE as "demo" | "live") || "demo";
+  (process.env.ABAD_DATA_MODE as "demo" | "live") || "live";
 
 export const isLiveMode = dataMode === "live";
 

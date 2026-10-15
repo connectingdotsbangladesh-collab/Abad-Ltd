@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { RefObject } from "react";
 import { Info, AlertCircle, CheckCircle2 } from "lucide-react";
@@ -70,31 +70,23 @@ export function FormAlerts({
         </div>
       )}
 
-      {/* Demo Success Alert */}
-      {submittedStatus === "demoSuccess" && (
-        <div className="p-6 rounded-2xl bg-brand-green/10 border border-brand-green/30 text-brand-navy my-4">
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="w-7 h-7 text-brand-green shrink-0" />
-            <div>
-              <h4 className="text-lg font-bold text-brand-green">
-                {isBn ? "ডেমো যাচাই সফল" : "Demo Validation Passed"}
-              </h4>
-              <p className="text-sm mt-1">{copy.common.demoSuccess}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Live Success Alert */}
-      {submittedStatus === "liveSuccess" && (
-        <div className="p-6 rounded-2xl bg-brand-green/10 border border-brand-green/30 text-brand-navy my-4">
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="w-7 h-7 text-brand-green shrink-0" />
+      {(submittedStatus === "liveSuccess" || submittedStatus === "demoSuccess") && (
+        <div className="p-5 sm:p-6 rounded-2xl bg-brand-green/10 border border-brand-green/30 text-brand-navy my-4">
+          <div className="flex items-start sm:items-center gap-3">
+            <CheckCircle2 className="w-7 h-7 text-brand-green shrink-0 mt-0.5 sm:mt-0" />
             <div>
-              <h4 className="text-lg font-bold text-brand-green">{copy.common.liveSuccess}</h4>
-              <p className="text-sm mt-2 font-mono bg-white px-3 py-1.5 rounded-lg border border-border inline-block">
-                {copy.common.reference}: <strong className="text-brand-navy">{liveReference}</strong>
+              <h4 className="text-base sm:text-lg font-bold text-brand-green">{copy.common.liveSuccess}</h4>
+              <p className="text-xs sm:text-sm text-ink/80 mt-1">
+                {isBn
+                  ? "আপনার অনুসন্ধান সফলভাবে সিস্টেমে রেকর্ড করা হয়েছে। আমাদের প্রতিনিধি দ্রুত যোগাযোগ করবেন।"
+                  : "Your enquiry has been successfully recorded in our system. Our team will follow up shortly."}
               </p>
+              {liveReference && (
+                <p className="text-xs sm:text-sm mt-3 font-mono bg-white px-3 py-1.5 rounded-lg border border-border inline-block">
+                  {copy.common.reference}: <strong className="text-brand-navy text-sm sm:text-base font-bold">{liveReference}</strong>
+                </p>
+              )}
             </div>
           </div>
         </div>

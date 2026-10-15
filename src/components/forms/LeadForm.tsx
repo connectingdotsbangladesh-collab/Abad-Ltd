@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect, useRef } from "react";
 import { LeadFormProps, LeadFormData } from "./types";
@@ -180,15 +180,6 @@ export function LeadForm({
 
     if (!validate()) return;
 
-    if (dataMode === "demo") {
-      setSubmitting(true);
-      setTimeout(() => {
-        setSubmitting(false);
-        setSubmittedStatus("demoSuccess");
-      }, 500);
-      return;
-    }
-
     try {
       setSubmitting(true);
       const envelope = {
@@ -230,9 +221,9 @@ export function LeadForm({
   };
 
   return (
-    <div className={`bg-white rounded-2xl p-6 sm:p-8 border border-border shadow-soft ${className}`}>
+    <div className={`bg-white rounded-2xl p-4 sm:p-8 border border-border shadow-soft ${className}`}>
       <FormAlerts
-        isDemo={dataMode === "demo"}
+        isDemo={false}
         locale={locale}
         copy={copy}
         errors={errors}

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -55,14 +55,14 @@ export function NetworkSection({ locale, copy, districts }: NetworkSectionProps)
         </div>
 
         {/* Division Chips */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+        <div className="flex items-center gap-2 mb-8 overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap sm:justify-center">
           {divisions.map((div) => {
             const isSelected = selectedDivision === div.id;
             return (
               <button
                 key={div.id}
                 onClick={() => setSelectedDivision(div.id)}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 min-h-[36px] ${
                   isSelected
                     ? "bg-brand-navy text-white shadow-soft"
                     : "bg-white text-ink/80 border border-border hover:border-brand-green"
@@ -74,9 +74,9 @@ export function NetworkSection({ locale, copy, districts }: NetworkSectionProps)
           })}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* District Search & List (7 cols) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-6 border border-border shadow-soft">
+          <div className="lg:col-span-7 bg-white rounded-2xl p-4 sm:p-6 border border-border shadow-soft">
             <div className="relative mb-4">
               <Search className="w-5 h-5 text-muted absolute left-3.5 top-3" />
               <input

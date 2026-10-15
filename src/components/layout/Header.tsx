@@ -52,14 +52,14 @@ export function Header({ locale, copy }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-border shadow-xs transition-colors">
-        <div className="max-w-[1200px] mx-auto h-20 px-4 sm:px-6 flex items-center justify-between gap-4">
+        <div className="max-w-[1200px] mx-auto h-16 sm:h-20 px-3.5 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
           {/* Brand Wordmark Lockup */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-focus rounded-xl py-1 px-1.5 group"
+            className="flex items-center gap-2.5 sm:gap-3 focus-visible:ring-2 focus-visible:ring-focus rounded-xl py-1 px-1 group"
             aria-label={`${copy.brand.name} - ${copy.brand.tagline}`}
           >
-            <div className="w-11 h-11 rounded-xl overflow-hidden bg-brand-navy border border-border/80 shadow-soft relative shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl overflow-hidden bg-brand-navy border border-border/80 shadow-soft relative shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/brand/abad-logo.jpg"
                 alt={`${copy.brand.name} logo`}
@@ -70,10 +70,10 @@ export function Header({ locale, copy }: HeaderProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-brand-navy leading-none group-hover:text-brand-green transition-colors">
+              <span className="text-lg sm:text-2xl font-bold tracking-tight text-brand-navy leading-none group-hover:text-brand-green transition-colors">
                 {locale === "bn" ? "আবাদ" : "Abad"}
               </span>
-              <span className="text-[10px] tracking-widest font-semibold uppercase text-brand-green leading-none mt-1">
+              <span className="text-[9px] sm:text-[10px] tracking-widest font-semibold uppercase text-brand-green leading-none mt-1">
                 LIMITED
               </span>
             </div>
@@ -206,39 +206,54 @@ export function Header({ locale, copy }: HeaderProps) {
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div
-            className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-white/98 backdrop-blur-lg border-t border-border z-50 p-6 overflow-y-auto flex flex-col justify-between"
+            className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-white/98 backdrop-blur-lg border-t border-border z-50 p-5 sm:p-6 overflow-y-auto flex flex-col justify-between"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => {
                 const isActive =
                   link.href === `/${locale}`
                     ? pathname === `/${locale}` || pathname === `/${locale}/`
                     : pathname.startsWith(link.href);
                 return (
-                  <Link
-                    key={link.id}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-lg font-bold py-2 border-b border-border/50 ${
-                      isActive ? "text-brand-green" : "text-ink"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
+                  <div key={link.id} className="border-b border-border/40 py-1">
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block text-base sm:text-lg font-bold py-2 min-h-[44px] flex items-center transition-colors ${
+                        isActive ? "text-brand-green" : "text-ink hover:text-brand-green"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                    {link.hasDropdown && (
+                      <div className="pl-4 pb-2 space-y-2">
+                        {copy.services.items.slice(0, 3).map((s) => (
+                          <Link
+                            key={s.id}
+                            href={`/${locale}/services/${s.id}`}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block text-xs sm:text-sm text-muted hover:text-brand-green py-1"
+                          >
+                            • {s.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
 
-            <div className="pt-8 border-t border-border mt-8 flex flex-col gap-4">
+            <div className="pt-6 border-t border-border mt-6 flex flex-col gap-3">
               <button
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   setConnectModalOpen(true);
                 }}
-                className="btn-primary w-full text-base"
+                className="btn-primary w-full text-base min-h-[48px] font-bold shadow-soft"
               >
                 {copy.common.join}
               </button>
