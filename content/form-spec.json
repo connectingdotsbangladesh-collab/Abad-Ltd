@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 1,
+  "endpoint": "POST /api/leads",
+  "submissionKinds": [
+    "farmer",
+    "buyer",
+    "hub",
+    "partner",
+    "sponsor",
+    "contact"
+  ],
+  "transportEnvelope": {
+    "kind": "enum",
+    "locale": "bn|en",
+    "districtId": "district id when required",
+    "consent": true,
+    "consentVersion": "privacy-v1",
+    "website": "honeypot; must be empty",
+    "idempotencyKey": "UUID per logical submission",
+    "fields": "only allowed fields for selected kind"
+  },
+  "fields": {
+    "name": {
+      "type": "text",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100,
+      "label": {
+        "bn": "আপনার নাম",
+        "en": "Your name"
+      }
+    },
+    "phone": {
+      "type": "tel",
+      "required": true,
+      "format": "BD mobile normalized to +8801XXXXXXXXX",
+      "label": {
+        "bn": "মোবাইল নম্বর",
+        "en": "Mobile number"
+      }
+    },
+    "email": {
+      "type": "email",
+      "required": false,
+      "maxLength": 254,
+      "label": {
+        "bn": "ইমেইল",
+        "en": "Email"
+      }
+    },
+    "districtId": {
+      "type": "select",
+      "required": true,
+      "optionsSource": "content/districts.json",
+      "label": {
+        "bn": "জেলা",
+        "en": "District"
+      }
+    },
+    "upazila": {
+      "type": "text",
+      "required": false,
+      "maxLength": 100,
+      "label": {
+        "bn": "উপজেলা / এলাকা",
+        "en": "Upazila / area"
+      }
+    },
+    "farmType": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "crops",
+        "vegetables-fruit",
+        "livestock-dairy",
+        "fish",
+        "mixed",
+        "other"
+      ],
+      "label": {
+        "bn": "কৃষিকাজের ধরন",
+        "en": "Farming activity"
+      }
+    },
+    "farmName": {
+      "type": "text",
+      "required": false,
+      "maxLength": 150,
+      "label": {
+        "bn": "খামার / উদ্যোগের নাম",
+        "en": "Farm / venture name"
+      }
+    },
+    "products": {
+      "type": "text",
+      "required": false,
+      "maxLength": 300,
+      "label": {
+        "bn": "পণ্য বা উৎপাদনের ধরন",
+        "en": "Products or production types"
+      }
+    },
+    "notes": {
+      "type": "textarea",
+      "required": false,
+      "maxLength": 2000,
+      "label": {
+        "bn": "অতিরিক্ত তথ্য",
+        "en": "Additional information"
+      }
+    },
+    "organization": {
+      "type": "text",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 150,
+      "label": {
+        "bn": "প্রতিষ্ঠানের নাম",
+        "en": "Organization name"
+      }
+    },
+    "buyerType": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "restaurant",
+        "supermarket",
+        "wholesaler",
+        "institution",
+        "other"
+      ],
+      "label": {
+        "bn": "ক্রেতার ধরন",
+        "en": "Buyer type"
+      }
+    },
+    "productCategory": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "produce",
+        "grains",
+        "livestock-dairy",
+        "fish",
+        "inputs",
+        "other"
+      ],
+      "label": {
+        "bn": "পণ্যের বিভাগ",
+        "en": "Product category"
+      }
+    },
+    "quantity": {
+      "type": "number",
+      "required": false,
+      "exclusiveMinimum": 0,
+      "label": {
+        "bn": "আনুমানিক পরিমাণ",
+        "en": "Indicative quantity"
+      }
+    },
+    "quantityUnit": {
+      "type": "select",
+      "required": false,
+      "options": [
+        "kg",
+        "tonne",
+        "litre",
+        "piece",
+        "other"
+      ],
+      "label": {
+        "bn": "পরিমাণের একক",
+        "en": "Quantity unit"
+      }
+    },
+    "deliveryFrequency": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "one-time",
+        "daily",
+        "weekly",
+        "monthly",
+        "to-discuss"
+      ],
+      "label": {
+        "bn": "সরবরাহের প্রয়োজন",
+        "en": "Supply frequency"
+      }
+    },
+    "requiredBy": {
+      "type": "date",
+      "required": false,
+      "notBefore": "today in Asia/Dhaka",
+      "label": {
+        "bn": "সম্ভাব্য প্রয়োজনের তারিখ",
+        "en": "Indicative required date"
+      }
+    },
+    "specification": {
+      "type": "textarea",
+      "required": true,
+      "minLength": 20,
+      "maxLength": 2000,
+      "label": {
+        "bn": "পণ্যের মান ও প্রয়োজন",
+        "en": "Product specification and requirements"
+      }
+    },
+    "partnerType": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "hub",
+        "logistics",
+        "technology",
+        "finance",
+        "sponsor",
+        "other"
+      ],
+      "label": {
+        "bn": "পার্টনারশিপের ধরন",
+        "en": "Partnership type"
+      }
+    },
+    "spaceDescription": {
+      "type": "textarea",
+      "required": false,
+      "maxLength": 2000,
+      "label": {
+        "bn": "স্থান ও সুবিধার বিবরণ",
+        "en": "Space and facilities"
+      }
+    },
+    "storageType": {
+      "type": "select",
+      "required": false,
+      "options": [
+        "ambient",
+        "cold",
+        "both",
+        "to-discuss"
+      ],
+      "label": {
+        "bn": "স্টোরেজের ধরন",
+        "en": "Storage type"
+      }
+    },
+    "transportAvailable": {
+      "type": "select",
+      "required": false,
+      "options": [
+        "yes",
+        "no",
+        "to-discuss"
+      ],
+      "label": {
+        "bn": "পরিবহনের ব্যবস্থা আছে কি?",
+        "en": "Is transport available?"
+      }
+    },
+    "collaborationInterest": {
+      "type": "textarea",
+      "required": true,
+      "minLength": 20,
+      "maxLength": 2000,
+      "label": {
+        "bn": "সহযোগিতার আগ্রহ",
+        "en": "Collaboration interest"
+      }
+    },
+    "topic": {
+      "type": "select",
+      "required": true,
+      "options": [
+        "general",
+        "farmer",
+        "buyer",
+        "hub",
+        "partnership",
+        "sponsorship"
+      ],
+      "label": {
+        "bn": "বিষয়",
+        "en": "Subject"
+      }
+    },
+    "message": {
+      "type": "textarea",
+      "required": true,
+      "minLength": 20,
+      "maxLength": 2000,
+      "label": {
+        "bn": "বার্তা",
+        "en": "Message"
+      }
+    },
+    "consent": {
+      "type": "checkbox",
+      "required": true,
+      "mustEqual": true,
+      "label": {
+        "bn": "আমার অনুসন্ধানের বিষয়ে যোগাযোগের জন্য তথ্য ব্যবহারে সম্মতি দিচ্ছি এবং গোপনীয়তা পেজটি পড়েছি।",
+        "en": "I consent to use of my information to respond to this enquiry and have read the privacy page."
+      }
+    },
+    "marketingConsent": {
+      "type": "checkbox",
+      "required": false,
+      "default": false,
+      "label": {
+        "bn": "আমি আবাদ-এর ভবিষ্যৎ আপডেট ইমেইলে পেতে চাই।",
+        "en": "I would like to receive future Abad updates by email."
+      }
+    },
+    "farmTypeOther": {
+      "type": "text",
+      "required": "when farmType equals other",
+      "minLength": 2,
+      "maxLength": 200,
+      "label": {
+        "bn": "অন্যান্য হলে বিস্তারিত জানান",
+        "en": "Describe the other option"
+      }
+    },
+    "buyerTypeOther": {
+      "type": "text",
+      "required": "when buyerType equals other",
+      "minLength": 2,
+      "maxLength": 200,
+      "label": {
+        "bn": "অন্যান্য হলে বিস্তারিত জানান",
+        "en": "Describe the other option"
+      }
+    },
+    "productCategoryOther": {
+      "type": "text",
+      "required": "when productCategory equals other",
+      "minLength": 2,
+      "maxLength": 200,
+      "label": {
+        "bn": "অন্যান্য হলে বিস্তারিত জানান",
+        "en": "Describe the other option"
+      }
+    },
+    "partnerTypeOther": {
+      "type": "text",
+      "required": "when partnerType equals other",
+      "minLength": 2,
+      "maxLength": 200,
+      "label": {
+        "bn": "অন্যান্য হলে বিস্তারিত জানান",
+        "en": "Describe the other option"
+      }
+    },
+    "quantityUnitOther": {
+      "type": "text",
+      "required": "when quantityUnit equals other",
+      "minLength": 2,
+      "maxLength": 200,
+      "label": {
+        "bn": "অন্যান্য হলে বিস্তারিত জানান",
+        "en": "Describe the other option"
+      }
+    }
+  },
+  "forms": {
+    "farmer": [
+      "name",
+      "phone",
+      "email",
+      "districtId",
+      "upazila",
+      "farmType",
+      "farmTypeOther",
+      "farmName",
+      "products",
+      "notes",
+      "consent"
+    ],
+    "buyer": [
+      "name",
+      "phone",
+      "email",
+      "organization",
+      "buyerType",
+      "buyerTypeOther",
+      "districtId",
+      "productCategory",
+      "productCategoryOther",
+      "quantity",
+      "quantityUnit",
+      "quantityUnitOther",
+      "deliveryFrequency",
+      "requiredBy",
+      "specification",
+      "consent"
+    ],
+    "hub": [
+      "name",
+      "phone",
+      "email",
+      "organization",
+      "districtId",
+      "upazila",
+      "spaceDescription",
+      "storageType",
+      "transportAvailable",
+      "collaborationInterest",
+      "consent"
+    ],
+    "partner": [
+      "name",
+      "phone",
+      "email",
+      "organization",
+      "partnerType",
+      "partnerTypeOther",
+      "districtId",
+      "collaborationInterest",
+      "consent"
+    ],
+    "sponsor": [
+      "name",
+      "phone",
+      "email",
+      "organization",
+      "districtId",
+      "collaborationInterest",
+      "consent"
+    ],
+    "contact": [
+      "name",
+      "phone",
+      "email",
+      "topic",
+      "message",
+      "consent"
+    ]
+  },
+  "rules": [
+    "For contact only, require at least one of phone/email, not a mandatory phone if a valid email is supplied.",
+    "Normalize Bengali digits and spaces before BD mobile validation; accept 01XXXXXXXXX, +8801XXXXXXXXX, 8801XXXXXXXXX, and 008801XXXXXXXXX; require supported operator prefix 013-019 after normalization.",
+    "Quantity and quantityUnit must be supplied together or both omitted.",
+    "Other selections reveal a required explanation of 2-200 characters; include the corresponding otherText field in the server allow-list.",
+    "Marketing consent belongs only to newsletter; never infer it from lead consent.",
+    "For a partner form, district is optional for technology, finance, sponsor or other organizations; required for hub and logistics.",
+    "No form accepts identity documents, bank details, passwords, exact GPS, medical records, files or investment payments.",
+    "Server validates a discriminated schema per kind, trims all strings, rejects unknown keys, normalizes allowed values and enforces a 16KB body limit.",
+    "In live mode return 201 only after durable insertion; in demo mode return 200 mode=demo and do not persist PII.",
+    "Rate limit production requests using a distributed store; do not rely on process memory in serverless deployment.",
+    "Use Origin allow-list, honeypot and a short-lived privacy-preserving HMAC fingerprint for throttling. Do not log form bodies.",
+    "Persist the consent text/version, timestamp and enquiry purpose. Keep marketing subscriptions separate.",
+    "Deduplicate retries with idempotency key; never claim receipt on a network error. Return the same reference for a valid repeated request."
+  ],
+  "uiOptions": {
+    "bn": {
+      "crops": "ফসল",
+      "vegetables-fruit": "সবজি ও ফল",
+      "livestock-dairy": "গবাদিপশু ও দুগ্ধ",
+      "fish": "মাছ",
+      "mixed": "মিশ্র কৃষি",
+      "other": "অন্যান্য",
+      "restaurant": "রেস্টুরেন্ট",
+      "supermarket": "সুপারশপ",
+      "wholesaler": "পাইকার",
+      "institution": "প্রাতিষ্ঠানিক ক্রেতা",
+      "produce": "সবজি ও ফল",
+      "grains": "শস্য",
+      "inputs": "কৃষি উপকরণ",
+      "one-time": "একবার",
+      "daily": "প্রতিদিন",
+      "weekly": "প্রতি সপ্তাহ",
+      "monthly": "প্রতি মাস",
+      "to-discuss": "আলোচনা সাপেক্ষে",
+      "hub": "হাব / ডিলার",
+      "logistics": "লজিস্টিকস",
+      "technology": "উপকরণ / প্রযুক্তি",
+      "finance": "অর্থায়ন সহযোগিতা",
+      "sponsor": "স্পন্সরশিপ",
+      "ambient": "সাধারণ স্টোরেজ",
+      "cold": "কোল্ড স্টোরেজ",
+      "both": "উভয় ধরনের",
+      "yes": "হ্যাঁ",
+      "no": "না",
+      "general": "সাধারণ অনুসন্ধান",
+      "farmer": "কৃষক",
+      "buyer": "ব্যবসায়িক ক্রেতা",
+      "partnership": "পার্টনারশিপ",
+      "sponsorship": "স্পন্সরশিপ",
+      "kg": "কেজি",
+      "tonne": "টন",
+      "litre": "লিটার",
+      "piece": "পিস"
+    },
+    "en": {
+      "crops": "Crops",
+      "vegetables-fruit": "Vegetables & fruit",
+      "livestock-dairy": "Livestock & dairy",
+      "fish": "Fish",
+      "mixed": "Mixed farming",
+      "other": "Other",
+      "restaurant": "Restaurant",
+      "supermarket": "Supermarket",
+      "wholesaler": "Wholesaler",
+      "institution": "Institutional buyer",
+      "produce": "Vegetables & fruit",
+      "grains": "Grains",
+      "inputs": "Agricultural inputs",
+      "one-time": "One-time",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "to-discuss": "To discuss",
+      "hub": "Hub / dealer",
+      "logistics": "Logistics",
+      "technology": "Inputs / technology",
+      "finance": "Funding collaboration",
+      "sponsor": "Sponsorship",
+      "ambient": "Ambient storage",
+      "cold": "Cold storage",
+      "both": "Both",
+      "yes": "Yes",
+      "no": "No",
+      "general": "General enquiry",
+      "farmer": "Farmer",
+      "buyer": "Business buyer",
+      "partnership": "Partnership",
+      "sponsorship": "Sponsorship",
+      "kg": "kg",
+      "tonne": "tonne",
+      "litre": "litre",
+      "piece": "piece"
+    }
+  },
+  "newsletter": {
+    "endpoint": "POST /api/newsletter",
+    "fields": [
+      "email",
+      "marketingConsent",
+      "locale",
+      "website",
+      "idempotencyKey"
+    ],
+    "doubleOptIn": true,
+    "modeWithoutProvider": "disabled or demo; never live success"
+  },
+  "requirednessOverrides": {
+    "contact": {
+      "phone": "required only if email absent",
+      "email": "required only if phone absent"
+    },
+    "hub": {
+      "organization": false
+    },
+    "partner": {
+      "districtId": "required for hub/logistics; optional for other types"
+    },
+    "sponsor": {
+      "districtId": false
+    }
+  },
+  "conditionalOtherFields": {
+    "farmType": "farmTypeOther",
+    "buyerType": "buyerTypeOther",
+    "productCategory": "productCategoryOther",
+    "partnerType": "partnerTypeOther",
+    "quantityUnit": "quantityUnitOther"
+  }
+}

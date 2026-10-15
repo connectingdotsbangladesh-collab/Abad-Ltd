@@ -1,0 +1,48 @@
+{
+  "companyNameBn": "আবাদ লিমিটেড",
+  "companyNameEn": "Abad Limited",
+  "defaultLocale": "bn",
+  "locales": [
+    "bn",
+    "en"
+  ],
+  "timezone": "Asia/Dhaka",
+  "productionUrl": "https://abad.ltd",
+  "email": null,
+  "phone": null,
+  "whatsapp": null,
+  "addressBn": null,
+  "addressEn": null,
+  "privacyContactEmail": null,
+  "socialLinks": {},
+  "logoSource": "/brand/abad-logo.jpg",
+  "headerLogo": "/brand/abad-logo.jpg",
+  "registration": {
+    "verified": false,
+    "number": null,
+    "tradeLicence": null,
+    "tin": null,
+    "bin": null
+  },
+  "featureFlags": {
+    "manualHeroSlides": false,
+    "newsletter": false,
+    "publishedInsights": false,
+    "activeHubDirectory": false,
+    "liveMarketplace": false,
+    "payments": false,
+    "financingTransactions": false,
+    "publicTraceability": false,
+    "analytics": false
+  },
+  "activeDistricts": [],
+  "confirmedPartners": [],
+  "approvedTestimonials": [],
+  "verifiedMetrics": [],
+  "ownerReview": {
+    "teamEnglishSpellings": false,
+    "privacyAndTerms": false,
+    "photographyRights": false,
+    "serviceAvailability": false
+  }
+}

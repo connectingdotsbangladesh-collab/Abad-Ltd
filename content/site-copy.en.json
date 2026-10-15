@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "brand": {
+    "name": "Abad Limited",
+    "shortName": "Abad",
+    "tagline": "Farmer identity. Technology. A connected market.",
+    "description": "An initiative to build a data-led agricultural ecosystem connecting farmers, buyers and local entrepreneurs."
+  },
+  "nav": [
+    {
+      "id": "home",
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "id": "about",
+      "href": "/about",
+      "label": "About"
+    },
+    {
+      "id": "ecosystem",
+      "href": "/ecosystem",
+      "label": "Our ecosystem"
+    },
+    {
+      "id": "services",
+      "href": "/services",
+      "label": "Services"
+    },
+    {
+      "id": "network",
+      "href": "/network",
+      "label": "Network"
+    },
+    {
+      "id": "insights",
+      "href": "/insights",
+      "label": "Insights"
+    },
+    {
+      "id": "contact",
+      "href": "/contact",
+      "label": "Contact"
+    }
+  ],
+  "common": {
+    "join": "Connect with Abad",
+    "farmerCta": "Express farmer interest",
+    "buyerCta": "Send a sourcing enquiry",
+    "partnerCta": "Discuss a partnership",
+    "learnMore": "Learn more",
+    "readMore": "Read more",
+    "planned": "Planned service",
+    "target": "Expansion goal",
+    "comingSoon": "In preparation",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "selectLanguage": "Choose language",
+    "required": "Required",
+    "optional": "Optional",
+    "submit": "Send enquiry",
+    "sending": "Sending…",
+    "liveSuccess": "Your enquiry has been received. Please keep your reference number.",
+    "demoSuccess": "Demo validation complete. Your details were not sent to or stored by Abad.",
+    "failure": "Your enquiry could not be sent right now. Your entries are preserved; please try again.",
+    "demoBanner": "Preview mode: this form does not send or save information.",
+    "reference": "Reference number",
+    "privacyConsent": "I consent to use of my information to respond to this enquiry and have read the privacy page.",
+    "newsletterConsent": "I would like to receive future Abad updates by email.",
+    "newsletterPending": "Follow the instructions in your email to confirm your subscription.",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "Return to the homepage or explore our services.",
+    "noResults": "No results match this search. Try changing the filters.",
+    "validation": {
+      "name": "Enter a name between 2 and 100 characters.",
+      "phone": "Enter a valid Bangladesh mobile number.",
+      "email": "Enter a valid email address.",
+      "district": "Select a district from the list.",
+      "consent": "Consent is required to send this enquiry.",
+      "quantity": "Enter a quantity greater than zero.",
+      "message": "Enter a message between 20 and 2000 characters.",
+      "rateLimit": "Too many requests were made. Please try again later."
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Abad Limited | Connecting farmers, buyers and technology",
+      "description": "Explore Abad Limited’s plans for farmer brands, direct markets, agricultural data, local hubs and smart logistics."
+    },
+    "eyebrow": "A connected future for Bangladesh’s agriculture",
+    "heroSlides": [
+      {
+        "id": "farmer-identity",
+        "title": "From farmer identity\nto a connected market.",
+        "body": "Abad is building connections between farmers, buyers and local entrepreneurs through data, technology and market access.",
+        "image": "/images/hero-farmer.webp"
+      },
+      {
+        "id": "technology",
+        "title": "Agriculture informed by data.\nProgress supported by technology.",
+        "body": "Our plans bring farm records, livestock identity and practical technology demonstrations together to support more informed agriculture.",
+        "image": "/images/farm-technology.webp"
+      },
+      {
+        "id": "shared-network",
+        "title": "Local hubs.\nWider market possibilities.",
+        "body": "We aim to bring producers and buyers closer through coordinated collection, storage and shared transport.",
+        "image": "/images/hub-logistics.webp"
+      }
+    ],
+    "objectiveCards": [
+      {
+        "id": "district-goal",
+        "value": "64 districts",
+        "label": "Our network expansion goal"
+      },
+      {
+        "id": "farmer-brand",
+        "value": "Farmer brands",
+        "label": "Put producer identity at the centre"
+      },
+      {
+        "id": "data",
+        "value": "Data & technology",
+        "label": "Coordinate agriculture with information"
+      }
+    ],
+    "problemsHeading": "Farmer challenges, our planned approach",
+    "problemsIntro": "An approach that considers the journey from production to market together.",
+    "problemSolutions": [
+      {
+        "id": "identity",
+        "problem": "Producer identity is often overlooked",
+        "solution": "Individual digital storefronts and brand identity"
+      },
+      {
+        "id": "access",
+        "problem": "Market information and access to larger buyers can be limited",
+        "solution": "Direct communication channels between farmers and buyers"
+      },
+      {
+        "id": "resources",
+        "problem": "Inputs, technology and capital can be difficult to coordinate",
+        "solution": "Production planning and potential collaborator connections"
+      },
+      {
+        "id": "logistics",
+        "problem": "Collection and transport can be fragmented",
+        "solution": "Plans for local hubs and shared logistics"
+      }
+    ],
+    "servicesHeading": "Abad’s planned services",
+    "servicesIntro": "Our goal is to connect farmer identity, production and markets in one ecosystem.",
+    "ecosystemHeading": "Connect the agricultural journey in one ecosystem",
+    "ecosystemIntro": "A planned system for communication and coordination between farms, data, local hubs and buyers.",
+    "journeyHeading": "How you can connect",
+    "networkHeading": "From local enterprise to a national network",
+    "networkIntro": "Our long-term goal is to connect farmers, buyers and local hubs across Bangladesh’s 64 districts. Talk to us about opportunities in your area.",
+    "teamHeading": "Abad’s leadership",
+    "insightsHeading": "Ideas on agriculture, technology and markets",
+    "faqHeading": "Your questions, clear answers",
+    "ctaTitle": "Start the next connection for your agricultural venture with Abad.",
+    "ctaBody": "Whether you are a farmer, a business buyer or a local entrepreneur, tell us about your interest and needs."
+  },
+  "about": {
+    "title": "Built around farmers. Looking toward the future.",
+    "intro": "Abad Limited plans to connect communication, information and supply coordination between farmers, buyers and local entrepreneurs. Our vision is for farmers to develop their own identity and brand alongside their products.",
+    "visionTitle": "Our vision",
+    "vision": "Modernize Bangladesh’s agricultural sector through data-driven technology and build a self-sustaining ecosystem where smallholder farmers and everyday buyers across all 64 districts can participate in a strong, transparent and commercially viable network.",
+    "missionTitle": "Our mission",
+    "missions": [
+      "Create direct farmer-buyer communication channels that can reduce reliance on intermediaries.",
+      "Develop technology-enabled supply chains, contract farming and smart logistics.",
+      "Help farmers develop a distinct brand identity through a multi-brand ecosystem."
+    ],
+    "valuesTitle": "Principles that guide our plans",
+    "values": [
+      {
+        "title": "Farmer focus",
+        "body": "Respect producer identity, needs and decisions."
+      },
+      {
+        "title": "Clear information",
+        "body": "Explain products, processes and terms clearly."
+      },
+      {
+        "title": "Accessible technology",
+        "body": "Support participation with Bangla language and simple experiences."
+      },
+      {
+        "title": "Local collaboration",
+        "body": "Coordinate with local entrepreneurs, farmers and buyers."
+      }
+    ],
+    "businessModelTitle": "Planning a sustainable business model",
+    "businessModelIntro": "Abad plans to build revenue from platform services, trading, logistics and field initiatives under clearly communicated terms.",
+    "revenueStreams": [
+      {
+        "title": "Platform fees",
+        "body": "Applicable commission or subscription-based services."
+      },
+      {
+        "title": "Trading margin",
+        "body": "Revenue from sourcing and selling agricultural products on agreed terms."
+      },
+      {
+        "title": "Logistics & technology services",
+        "body": "Transport coordination and supply of relevant technology tools."
+      },
+      {
+        "title": "Sponsorship & initiatives",
+        "body": "Approved field initiatives and relevant sponsorship collaborations."
+      }
+    ],
+    "team": [
+      {
+        "id": "ceo",
+        "nameBn": "রুবায়েত হোসেন",
+        "nameEn": "Rubayet Hossain",
+        "role": "CEO",
+        "title": "Chief Executive Officer",
+        "bio": "Leads Abad’s vision, business direction and growth, with a focus on long-term relationships between farmers, institutional buyers and ecosystem collaborators.",
+        "responsibilities": [
+          "Set the long-term strategy for a data-led platform that helps farmers develop independent brands.",
+          "Develop B2B relationships and supply agreements with agro-businesses, corporations, restaurant chains and supermarkets.",
+          "Build relationships with potential funding platforms and sponsors for Krishijatra and field initiatives.",
+          "Lead Abad’s brand strategy and promotion of its multi-brand ecosystem."
+        ],
+        "photo": null
+      },
+      {
+        "id": "cto",
+        "nameBn": "নায়েফ মোঃ হাসিব",
+        "nameEn": "Nayeef Mohammad Hashib",
+        "role": "CTO",
+        "title": "Chief Technology Officer",
+        "bio": "Responsible for Abad’s digital platform, data systems and technical security, with an emphasis on accessible Bangla experiences and infrastructure that can grow with the network.",
+        "responsibilities": [
+          "Develop the multi-vendor website and app, including farmer profiles, storefronts and order dashboards.",
+          "Design livestock tagging software, future IoT integrations and a central farmer database.",
+          "Manage scalable cloud infrastructure, secure payment integrations and escrow workflows if approved for implementation.",
+          "Create simple Bangla-first interfaces for smallholder farmers and protect platform data."
+        ],
+        "photo": null
+      },
+      {
+        "id": "coo",
+        "nameBn": "ইউসুব ইলিয়াস",
+        "nameEn": "Yousub Ilias",
+        "role": "COO",
+        "title": "Chief Operating Officer",
+        "bio": "Leads field operations, farmer relationships and supply coordination, connecting local hubs, transport arrangements and product quality processes.",
+        "responsibilities": [
+          "Plan and coordinate district and upazila hubs with local agents and dealers toward the 64-district expansion goal.",
+          "Coordinate the farm-to-buyer supply chain and owned or shared transport.",
+          "Manage field implementation and training for contract farming, solar pumps, drip irrigation and new technologies.",
+          "Oversee quality processes across collection, storage and delivery of agricultural produce and livestock."
+        ],
+        "photo": null
+      },
+      {
+        "id": "cfo",
+        "nameBn": "শাহরিয়ার তানভীর আহমদ",
+        "nameEn": "Shahriar Tanvir Ahmad",
+        "role": "CFO",
+        "title": "Chief Financial Officer",
+        "bio": "Manages financial planning, income and expenditure, capital allocation and company formation, with a focus on practical budgeting and transparent accounting.",
+        "responsibilities": [
+          "Plan and account for potential commission, subscription, trading, logistics and technology-product revenue.",
+          "Oversee allocation, accounting, contractual terms and settlement for agricultural funding arranged through approved collaborators.",
+          "Control operating costs through local storage and shared logistics, and prepare marketing and transport budgets.",
+          "Coordinate company-formation documentation, MoA/AoA, trade licensing, TIN, VAT and tax-related preparation and compliance."
+        ],
+        "photo": null
+      }
+    ]
+  },
+  "services": {
+    "title": "Connecting production and markets.",
+    "intro": "Each planned Abad service is designed to create a useful connection between farmers, buyers and local entrepreneurs.",
+    "items": [
+      {
+        "id": "farmer-brands",
+        "icon": "Store",
+        "title": "Farmer brands & digital storefronts",
+        "summary": "A planned space for farmer identity, product stories and direct market connections.",
+        "intro": "Abad plans a multi-vendor platform where farmers can establish a storefront with their identity and product information. Buyers will be able to learn about the producer as well as the product.",
+        "benefits": [
+          "An individual storefront and brand identity",
+          "Product, season and production-area information",
+          "An opportunity to receive direct buyer enquiries"
+        ],
+        "audience": "Farmers, livestock producers and agricultural entrepreneurs",
+        "ctaType": "farmer"
+      },
+      {
+        "id": "market-access",
+        "icon": "Handshake",
+        "title": "Direct market access & B2B sourcing",
+        "summary": "An initiative to connect producers with restaurants, supermarkets, wholesalers and institutional buyers.",
+        "intro": "Abad will help producers reach buyers beyond local markets and plan supply around demand. Product specifications, quantities, schedules and prices will be agreed through discussion.",
+        "benefits": [
+          "Collect business-buyer requirements",
+          "Identify potential suppliers by specification and quantity",
+          "Support discussions for recurring supply"
+        ],
+        "audience": "Farmers, wholesalers, restaurants, supermarkets and institutions",
+        "ctaType": "buyer"
+      },
+      {
+        "id": "data-traceability",
+        "icon": "ScanLine",
+        "title": "Farm data & livestock traceability",
+        "summary": "Planned farmer, farm and production records with livestock identification tags.",
+        "intro": "Abad aims to maintain relevant farmer and production records in a central database and use unique identification tags for livestock. Information will be shared according to permission, with personal and sensitive records protected.",
+        "benefits": [
+          "Consistent farm and production records",
+          "Unique livestock identification and permission-based information",
+          "Use information to support quality review and planning"
+        ],
+        "audience": "Livestock producers, farmers and operations teams",
+        "ctaType": "farmer"
+      },
+      {
+        "id": "hubs-logistics",
+        "icon": "Truck",
+        "title": "Local hubs & smart logistics",
+        "summary": "A planned network of local hubs and shared transport for coordinated supply.",
+        "intro": "Abad plans collection, storage and distribution hubs with local entrepreneurs and dealers. Coordination between owned vans and other logistics services will focus on managing transport costs and delivery schedules.",
+        "benefits": [
+          "Potential hub-operation opportunities for local entrepreneurs",
+          "Coordinate product collection and storage",
+          "Plan shared transport and delivery"
+        ],
+        "audience": "Local entrepreneurs, dealers and logistics providers",
+        "ctaType": "hub"
+      },
+      {
+        "id": "contract-farming",
+        "icon": "Sprout",
+        "title": "Contract farming & funding connections",
+        "summary": "A planned approach to production coordination, inputs and connections with potential funding collaborators.",
+        "intro": "Abad aims to coordinate production plans with seeds, fertilizer, tools and possible capital support. Eligibility, agreements, funding terms and risks will be assessed separately for each project. Expressing interest through the website does not guarantee funding.",
+        "benefits": [
+          "Understand production needs and develop a plan",
+          "Connect input needs with potential collaborators",
+          "Aim for clear agreements and financial records"
+        ],
+        "audience": "Farmers, livestock producers and potential funding collaborators",
+        "ctaType": "farmer"
+      },
+      {
+        "id": "inputs-technology",
+        "icon": "Sun",
+        "title": "Agricultural inputs & modern technology",
+        "summary": "Access to information on agricultural inputs, tagging tools, solar pumps and drip irrigation.",
+        "intro": "Abad plans to introduce suitable technologies and quality inputs based on farmer needs and develop supply arrangements. Pricing, availability and support will be described for each offer.",
+        "benefits": [
+          "Select inputs according to need",
+          "Learn about solar pumps and drip irrigation",
+          "Information on tagging tools and equipment"
+        ],
+        "audience": "Farmers, livestock producers and technology suppliers",
+        "ctaType": "farmer"
+      },
+      {
+        "id": "training-demonstration",
+        "icon": "GraduationCap",
+        "title": "Training & field demonstrations",
+        "summary": "Learn from technology demonstrations on farms and exchange practical knowledge between farmers.",
+        "intro": "Field demonstrations will show how suitable technologies or improved seeds are used on a farm. The goal is to share practical experience in accessible language and help farmers make decisions suited to their needs.",
+        "benefits": [
+          "See practical applications",
+          "Ask questions and exchange experience",
+          "Develop local farmer-learning networks"
+        ],
+        "audience": "Farmers, agricultural entrepreneurs and training collaborators",
+        "ctaType": "farmer"
+      },
+      {
+        "id": "field-events",
+        "icon": "MapPin",
+        "title": "Krishijatra & field initiatives",
+        "summary": "Potential farm visits, knowledge exchange and sponsorship collaboration.",
+        "intro": "Abad plans to build connections between agricultural ventures, technology providers and potential collaborators through Krishijatra and field initiatives. Details will be published for approved events.",
+        "benefits": [
+          "Learn from agricultural ventures",
+          "Connect with farmers and entrepreneurs",
+          "Discuss relevant sponsorship opportunities"
+        ],
+        "audience": "Agricultural entrepreneurs, input companies and sponsors",
+        "ctaType": "sponsor"
+      }
+    ]
+  },
+  "ecosystem": {
+    "title": "Farms, information, hubs and markets—connected.",
+    "intro": "Abad plans a coordinated network that connects producer identity, inputs, data, transport and buyer requirements.",
+    "steps": [
+      {
+        "id": "farm",
+        "title": "Farmers & farms",
+        "body": "Relevant information about farming activity, production area and capacity."
+      },
+      {
+        "id": "data",
+        "title": "Data & identity",
+        "body": "Permission-based records, farmer brands and livestock identity."
+      },
+      {
+        "id": "production",
+        "title": "Production coordination",
+        "body": "Inputs, training and potential contract-farming collaboration."
+      },
+      {
+        "id": "hub",
+        "title": "Local hubs & logistics",
+        "body": "Coordinated collection, storage and transport."
+      },
+      {
+        "id": "market",
+        "title": "Buyers & markets",
+        "body": "Direct communication, sourcing requirements and potential supply discussions."
+      }
+    ],
+    "dataNote": "Personal farmer information, financing documents or health records will not be made public automatically.",
+    "phaseNote": "This describes Abad’s planned operating model. Actual services and availability will be published according to location and readiness."
+  },
+  "farmers": {
+    "title": "Your farm. Your identity. Wider possibilities.",
+    "intro": "Express your interest in Abad’s plans for farmer brands, market connections and data-led agricultural activity.",
+    "benefits": [
+      {
+        "title": "Your own brand",
+        "body": "An opportunity to present your identity and product information."
+      },
+      {
+        "title": "Market connections",
+        "body": "Discussions with potential buyers beyond your local market."
+      },
+      {
+        "title": "Production planning",
+        "body": "Coordination around inputs, training and possible support."
+      },
+      {
+        "title": "Useful information",
+        "body": "A planned approach to relevant farm and production records."
+      }
+    ],
+    "steps": [
+      "Tell us about your interest and farming activity",
+      "Discuss possible services and next steps",
+      "Plan participation based on relevant review and terms"
+    ],
+    "formTitle": "Farmer interest form",
+    "formIntro": "Provide a few details. Land deeds, national identification and bank information are not needed here."
+  },
+  "buyers": {
+    "title": "Plan your sourcing with direct producer connections.",
+    "intro": "Tell us about sourcing needs for your restaurant, supermarket, wholesale business or institution. Potential supply can be discussed around specifications, quantities, schedules and delivery locations.",
+    "benefits": [
+      "Describe product types and quality requirements",
+      "Discuss quantities and schedules",
+      "Explore production-area information",
+      "Discuss potential recurring B2B supply"
+    ],
+    "steps": [
+      "Submit your sourcing requirements",
+      "Discuss potential supply and terms",
+      "Use a separate supply agreement if terms are agreed"
+    ],
+    "formTitle": "Business sourcing enquiry"
+  },
+  "partners": {
+    "title": "Connect local expertise with a wider agricultural network.",
+    "intro": "Abad’s plans include potential collaboration with hub entrepreneurs, logistics providers, technology suppliers, funding collaborators and sponsors.",
+    "types": [
+      {
+        "id": "hub",
+        "title": "Hubs & dealers",
+        "body": "Discuss local collection, storage and distribution capacity."
+      },
+      {
+        "id": "logistics",
+        "title": "Logistics",
+        "body": "Explore shared transport and delivery coordination."
+      },
+      {
+        "id": "technology",
+        "title": "Inputs & technology",
+        "body": "Introduce products and technologies suited to farmer needs."
+      },
+      {
+        "id": "finance",
+        "title": "Funding collaboration",
+        "body": "Discuss potential contract-farming support arrangements."
+      },
+      {
+        "id": "sponsor",
+        "title": "Sponsorship",
+        "body": "Explore relevant collaboration for approved field initiatives."
+      }
+    ],
+    "formTitle": "Partnership enquiry",
+    "hubFormTitle": "Hub partnership interest",
+    "sponsorFormTitle": "Sponsorship interest"
+  },
+  "network": {
+    "title": "A 64-district goal. Built through local connections.",
+    "intro": "Abad plans a network that connects farmers, buyers and entrepreneurs across Bangladesh’s districts. Select your district to express interest.",
+    "status": "Service availability for this district has not yet been published.",
+    "legendPlanned": "Planned expansion",
+    "districtSelect": "Select your district",
+    "selectedDistrict": "Selected district",
+    "noActiveHubs": "Verified operational hubs will be shown here when the list is published."
+  },
+  "marketplace": {
+    "title": "A future of farmer-owned storefronts.",
+    "intro": "A multi-vendor marketplace where farmers can present products under their own brands is part of Abad’s plan.",
+    "notice": "The marketplace is in preparation. There are no live stores, prices or purchases here yet.",
+    "categories": [
+      {
+        "id": "produce",
+        "title": "Vegetables & fruit"
+      },
+      {
+        "id": "grains",
+        "title": "Grains"
+      },
+      {
+        "id": "livestock",
+        "title": "Livestock & dairy"
+      },
+      {
+        "id": "fish",
+        "title": "Fish & aquatic products"
+      },
+      {
+        "id": "inputs",
+        "title": "Agricultural inputs"
+      }
+    ],
+    "emptyTitle": "Awaiting verified storefronts",
+    "emptyBody": "Express interest as a farmer or send a business sourcing enquiry."
+  },
+  "insights": {
+    "title": "Exploring the connections between agriculture, technology and markets.",
+    "intro": "Abad’s plans, educational perspectives and future field updates.",
+    "emptyTitle": "Updates are being prepared",
+    "emptyBody": "Approved articles and field updates will appear here when published.",
+    "all": "All topics",
+    "articles": [
+      {
+        "id": "farmer-as-a-brand",
+        "slug": "farmer-as-a-brand",
+        "category": "brands",
+        "isDraft": true,
+        "publishedAt": null,
+        "title": "When the farmer becomes a brand",
+        "excerpt": "Connecting a product with its producer’s identity can create opportunities for stronger relationships.",
+        "paragraphs": [
+          "Every agricultural product represents someone’s work, experience and farm. Making that identity visible gives the producer a presence beyond a single supply transaction.",
+          "A digital storefront can present production area, product types, seasonality and supply capacity. Accurate, regularly updated information helps buyers start informed conversations.",
+          "Abad plans to build an accessible platform for this identity. Its focus will be transparent information, product context and direct communication between producers and buyers."
+        ]
+      },
+      {
+        "id": "traceability-starts-with-data",
+        "slug": "traceability-starts-with-data",
+        "category": "technology",
+        "isDraft": true,
+        "publishedAt": null,
+        "title": "Traceability begins with production records",
+        "excerpt": "Simple records and reliable identification form a foundation for data-led agriculture.",
+        "paragraphs": [
+          "Recording where a product was grown, when it was collected and what information was added at each stage is an early step toward data-led operations.",
+          "A unique livestock tag can connect identity and records. A tag alone does not make the information verified; records also need update and review processes.",
+          "Permission-based access is important to Abad’s data plans. Buyer-relevant information and access to a farmer’s personal information will be managed separately."
+        ]
+      },
+      {
+        "id": "local-hubs-shared-logistics",
+        "slug": "local-hubs-shared-logistics",
+        "category": "logistics",
+        "isDraft": true,
+        "publishedAt": null,
+        "title": "Local hubs, coordinated supply",
+        "excerpt": "Planning supply around local entrepreneurs and shared transport.",
+        "paragraphs": [
+          "Agricultural supply needs coordination between collection, temporary storage and delivery. A local hub can serve as a point for that coordination.",
+          "Involving local entrepreneurs or dealers can help planning reflect local conditions. Storage and handling requirements also vary by product.",
+          "Abad is considering a model that combines owned vans with other logistics services. Delivery plans will depend on verified service areas, capacity and timing."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let’s discuss your needs and opportunities.",
+    "intro": "Use this form to express farmer interest, describe sourcing needs or discuss collaboration.",
+    "formTitle": "Your message",
+    "missingContact": "You can send your enquiry through this form.",
+    "newsletterTitle": "Receive future Abad updates",
+    "newsletterBody": "Published updates will be sent by email with your consent."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "id": "what-is-abad",
+        "category": "general",
+        "q": "What is Abad Limited?",
+        "a": "Abad Limited is an initiative to build a data-led agricultural ecosystem. Its plans include farmer brands, direct market connections, local hubs, smart logistics and technology-enabled agricultural support."
+      },
+      {
+        "id": "join-farmer",
+        "category": "farmers",
+        "q": "How can I express interest as a farmer?",
+        "a": "Use the farmer interest form to provide your name, contact details, district and farming activity. After receipt, possible next steps can be discussed. A submitted form does not automatically activate a store or approve an agreement."
+      },
+      {
+        "id": "national-network",
+        "category": "network",
+        "q": "Is Abad already operating in all 64 districts?",
+        "a": "Building a network across 64 districts is our expansion goal. Information about operational hubs and services will be published after it is verified."
+      },
+      {
+        "id": "commission",
+        "category": "farmers",
+        "q": "What will platform use cost?",
+        "a": "A commission or subscription model is under consideration. Applicable fees, included services and settlement terms will be stated in the final offer or agreement."
+      },
+      {
+        "id": "buyer-sourcing",
+        "category": "buyers",
+        "q": "How can a business buyer request supply?",
+        "a": "Use the buyer enquiry form to describe your organization, product type, indicative quantity, timing and delivery district. Supply and price arrangements will be discussed separately."
+      },
+      {
+        "id": "hub-partner",
+        "category": "partners",
+        "q": "Can I express interest in becoming a local hub partner?",
+        "a": "Local entrepreneurs and dealers can use the hub-partner form. Potential collaboration will be discussed after reviewing location, facilities and relevant capacity."
+      },
+      {
+        "id": "funding",
+        "category": "farmers",
+        "q": "Does submitting an enquiry guarantee funding?",
+        "a": "Funding depends on suitable projects, collaborators, assessment and contractual terms. Website forms are not a loan-approval or investment-payment process."
+      },
+      {
+        "id": "tagging",
+        "category": "technology",
+        "q": "What is livestock tagging intended to do?",
+        "a": "Unique tags are intended to connect an animal’s identity with relevant records. Public information will depend on permissions and the service terms."
+      },
+      {
+        "id": "stores",
+        "category": "marketplace",
+        "q": "Can I purchase products online immediately?",
+        "a": "A multi-vendor marketplace is part of our plan. Product, price, delivery and payment terms will be published before transactions are enabled. Business buyers can express sourcing requirements in the meantime."
+      },
+      {
+        "id": "data",
+        "category": "technology",
+        "q": "How will my information be used?",
+        "a": "Relevant information will be used to respond to your enquiry or interest and coordinate potential services. Please read the privacy page before submitting a form."
+      },
+      {
+        "id": "sponsorship",
+        "category": "partners",
+        "q": "How can an organization discuss sponsorship?",
+        "a": "Express sponsorship interest on the partners page. A separate proposal can be prepared around approved initiatives, audiences, activities and relevant benefits."
+      },
+      {
+        "id": "fair-price",
+        "category": "farmers",
+        "q": "What does fair pricing mean in this model?",
+        "a": "The aim is to support pricing through direct producer-buyer discussions, quality and demand information, and transparent costs. It does not guarantee the highest price, a fixed income or sale of every product."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Working toward a connected agricultural ecosystem through data, technology and relationships between farmers, buyers and local entrepreneurs.",
+    "explore": "Explore Abad",
+    "connect": "Get involved",
+    "legal": "Use & privacy",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "rights": "Abad Limited. All rights reserved.",
+    "availability": "Service and network availability will be published after verification."
+  }
+}

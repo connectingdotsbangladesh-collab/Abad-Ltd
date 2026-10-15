@@ -1,0 +1,15 @@
+Build the complete Abad Limited / আবাদ লিমিটেড website specified in this workspace.
+
+Treat this as an implementation task. Read ANTIGRAVITY_MASTER_PROMPT.md, GEMINI.md, specs/PRODUCT_AND_DESIGN.md, specs/TECHNICAL_BUILD.md, specs/ACCEPTANCE_TESTS.md, the content folder, design/tokens.css, design/ASSET_BRIEF.md, site.config.json, and .env.example. The attached original logo is public/brand/abad-logo-source.png.
+
+Use WeGro https://www.wegro.global/ as the reference for agricultural storytelling, a confident large hero, clear services and participant journeys. Build Abad's original identity and copy, not a relabelled copy of WeGro's business data or images.
+
+Implement a polished mobile-first Bangla website with a complete English switch, the full defined public route set, all 8 service-detail routes, clear farmer/buyer/partner interest flows, a truthful 64-district network presentation, SEO, accessibility and protected lead administration. Use the supplied JSON content and exact Bangla management names. English name spellings remain provisional until confirmed; use authoritative Bangla names if the review flag is false.
+
+Use a supported stable Next.js/React/TypeScript stack, compatible styling, and the provided Supabase starter schema for the live lead backend. In an existing project, preserve compatible conventions. Create a concise implementation plan and then carry it through; do not stop after a plan, mockup, hero or static page. Inspect the current official framework documentation where APIs need verification and lock the dependency versions.
+
+Without credentials, complete the local demo and show clear demo form messages; do not transmit or save real visitor PII. With correctly configured live backend, return success only after durable storage. Missing company phone, email, address, portraits, real photographs or domain must stay in centralized configuration and OWNER_INPUTS.md; use the defined designed fallbacks and continue local implementation without asking routine questions.
+
+64 districts is an expansion target; 2% commission and Tk 70/Tk 60 tagging prices are illustrative, and biniyog.io is not a confirmed partner. Do not invent statistics, stores, testimonials, awards, investment returns, actual news, app availability, active hubs or contacts. All future commercial payment, escrow and funding transaction features remain off in the first release.
+
+Run the production build, relevant type/lint checks, focused acceptance tests and responsive browser review. Fix the failures. Start the local preview and return a walkthrough showing actual implemented routes, screenshots, test results, setup commands, demo-to-live steps and remaining owner inputs. Do not deploy externally or enable payments as part of this task.

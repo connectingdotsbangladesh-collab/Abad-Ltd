@@ -1,0 +1,647 @@
+{
+  "source": "https://bangladesh.gov.bd/views/district-list",
+  "checkedAt": "2026-10-14",
+  "note": "Geographic list only. Presence does not mean Abad operates in a district. English names are readable transliterations. No geocoordinates or district-boundary data are included.",
+  "districts": [
+    {
+      "id": "dhaka",
+      "nameBn": "ঢাকা",
+      "nameEn": "Dhaka",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "faridpur",
+      "nameBn": "ফরিদপুর",
+      "nameEn": "Faridpur",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "gazipur",
+      "nameBn": "গাজীপুর",
+      "nameEn": "Gazipur",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "gopalganj",
+      "nameBn": "গোপালগঞ্জ",
+      "nameEn": "Gopalganj",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "kishoreganj",
+      "nameBn": "কিশোরগঞ্জ",
+      "nameEn": "Kishoreganj",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "madaripur",
+      "nameBn": "মাদারীপুর",
+      "nameEn": "Madaripur",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "manikganj",
+      "nameBn": "মানিকগঞ্জ",
+      "nameEn": "Manikganj",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "munshiganj",
+      "nameBn": "মুন্সীগঞ্জ",
+      "nameEn": "Munshiganj",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "narayanganj",
+      "nameBn": "নারায়ণগঞ্জ",
+      "nameEn": "Narayanganj",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "narsingdi",
+      "nameBn": "নরসিংদী",
+      "nameEn": "Narsingdi",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "rajbari",
+      "nameBn": "রাজবাড়ী",
+      "nameEn": "Rajbari",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "shariatpur",
+      "nameBn": "শরীয়তপুর",
+      "nameEn": "Shariatpur",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "tangail",
+      "nameBn": "টাঙ্গাইল",
+      "nameEn": "Tangail",
+      "divisionId": "dhaka",
+      "divisionBn": "ঢাকা",
+      "divisionEn": "Dhaka",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "bandarban",
+      "nameBn": "বান্দরবান",
+      "nameEn": "Bandarban",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "brahmanbaria",
+      "nameBn": "ব্রাহ্মণবাড়িয়া",
+      "nameEn": "Brahmanbaria",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "chandpur",
+      "nameBn": "চাঁদপুর",
+      "nameEn": "Chandpur",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "chattogram",
+      "nameBn": "চট্টগ্রাম",
+      "nameEn": "Chattogram",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "cumilla",
+      "nameBn": "কুমিল্লা",
+      "nameEn": "Cumilla",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "coxsbazar",
+      "nameBn": "কক্সবাজার",
+      "nameEn": "Cox’s Bazar",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "feni",
+      "nameBn": "ফেনী",
+      "nameEn": "Feni",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "khagrachhari",
+      "nameBn": "খাগড়াছড়ি",
+      "nameEn": "Khagrachhari",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "lakshmipur",
+      "nameBn": "লক্ষ্মীপুর",
+      "nameEn": "Lakshmipur",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "noakhali",
+      "nameBn": "নোয়াখালী",
+      "nameEn": "Noakhali",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "rangamati",
+      "nameBn": "রাঙ্গামাটি",
+      "nameEn": "Rangamati",
+      "divisionId": "chattogram",
+      "divisionBn": "চট্টগ্রাম",
+      "divisionEn": "Chattogram",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "bagerhat",
+      "nameBn": "বাগেরহাট",
+      "nameEn": "Bagerhat",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "chuadanga",
+      "nameBn": "চুয়াডাঙ্গা",
+      "nameEn": "Chuadanga",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "jashore",
+      "nameBn": "যশোর",
+      "nameEn": "Jashore",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "jhenaidah",
+      "nameBn": "ঝিনাইদহ",
+      "nameEn": "Jhenaidah",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "khulna",
+      "nameBn": "খুলনা",
+      "nameEn": "Khulna",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "kushtia",
+      "nameBn": "কুষ্টিয়া",
+      "nameEn": "Kushtia",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "magura",
+      "nameBn": "মাগুরা",
+      "nameEn": "Magura",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "meherpur",
+      "nameBn": "মেহেরপুর",
+      "nameEn": "Meherpur",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "narail",
+      "nameBn": "নড়াইল",
+      "nameEn": "Narail",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "satkhira",
+      "nameBn": "সাতক্ষীরা",
+      "nameEn": "Satkhira",
+      "divisionId": "khulna",
+      "divisionBn": "খুলনা",
+      "divisionEn": "Khulna",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "bogura",
+      "nameBn": "বগুড়া",
+      "nameEn": "Bogura",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "joypurhat",
+      "nameBn": "জয়পুরহাট",
+      "nameEn": "Joypurhat",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "naogaon",
+      "nameBn": "নওগাঁ",
+      "nameEn": "Naogaon",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "natore",
+      "nameBn": "নাটোর",
+      "nameEn": "Natore",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "chapainawabganj",
+      "nameBn": "চাঁপাইনবাবগঞ্জ",
+      "nameEn": "Chapainawabganj",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "pabna",
+      "nameBn": "পাবনা",
+      "nameEn": "Pabna",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "rajshahi",
+      "nameBn": "রাজশাহী",
+      "nameEn": "Rajshahi",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "sirajganj",
+      "nameBn": "সিরাজগঞ্জ",
+      "nameEn": "Sirajganj",
+      "divisionId": "rajshahi",
+      "divisionBn": "রাজশাহী",
+      "divisionEn": "Rajshahi",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "habiganj",
+      "nameBn": "হবিগঞ্জ",
+      "nameEn": "Habiganj",
+      "divisionId": "sylhet",
+      "divisionBn": "সিলেট",
+      "divisionEn": "Sylhet",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "moulvibazar",
+      "nameBn": "মৌলভীবাজার",
+      "nameEn": "Moulvibazar",
+      "divisionId": "sylhet",
+      "divisionBn": "সিলেট",
+      "divisionEn": "Sylhet",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "sunamganj",
+      "nameBn": "সুনামগঞ্জ",
+      "nameEn": "Sunamganj",
+      "divisionId": "sylhet",
+      "divisionBn": "সিলেট",
+      "divisionEn": "Sylhet",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "sylhet",
+      "nameBn": "সিলেট",
+      "nameEn": "Sylhet",
+      "divisionId": "sylhet",
+      "divisionBn": "সিলেট",
+      "divisionEn": "Sylhet",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "dinajpur",
+      "nameBn": "দিনাজপুর",
+      "nameEn": "Dinajpur",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "gaibandha",
+      "nameBn": "গাইবান্ধা",
+      "nameEn": "Gaibandha",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "kurigram",
+      "nameBn": "কুড়িগ্রাম",
+      "nameEn": "Kurigram",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "lalmonirhat",
+      "nameBn": "লালমনিরহাট",
+      "nameEn": "Lalmonirhat",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "nilphamari",
+      "nameBn": "নীলফামারী",
+      "nameEn": "Nilphamari",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "panchagarh",
+      "nameBn": "পঞ্চগড়",
+      "nameEn": "Panchagarh",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "rangpur",
+      "nameBn": "রংপুর",
+      "nameEn": "Rangpur",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "thakurgaon",
+      "nameBn": "ঠাকুরগাঁও",
+      "nameEn": "Thakurgaon",
+      "divisionId": "rangpur",
+      "divisionBn": "রংপুর",
+      "divisionEn": "Rangpur",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "jamalpur",
+      "nameBn": "জামালপুর",
+      "nameEn": "Jamalpur",
+      "divisionId": "mymensingh",
+      "divisionBn": "ময়মনসিংহ",
+      "divisionEn": "Mymensingh",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "mymensingh",
+      "nameBn": "ময়মনসিংহ",
+      "nameEn": "Mymensingh",
+      "divisionId": "mymensingh",
+      "divisionBn": "ময়মনসিংহ",
+      "divisionEn": "Mymensingh",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "netrokona",
+      "nameBn": "নেত্রকোণা",
+      "nameEn": "Netrokona",
+      "divisionId": "mymensingh",
+      "divisionBn": "ময়মনসিংহ",
+      "divisionEn": "Mymensingh",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "sherpur",
+      "nameBn": "শেরপুর",
+      "nameEn": "Sherpur",
+      "divisionId": "mymensingh",
+      "divisionBn": "ময়মনসিংহ",
+      "divisionEn": "Mymensingh",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "barguna",
+      "nameBn": "বরগুনা",
+      "nameEn": "Barguna",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "barishal",
+      "nameBn": "বরিশাল",
+      "nameEn": "Barishal",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "bhola",
+      "nameBn": "ভোলা",
+      "nameEn": "Bhola",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "jhalokathi",
+      "nameBn": "ঝালকাঠি",
+      "nameEn": "Jhalokathi",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "patuakhali",
+      "nameBn": "পটুয়াখালী",
+      "nameEn": "Patuakhali",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    },
+    {
+      "id": "pirojpur",
+      "nameBn": "পিরোজপুর",
+      "nameEn": "Pirojpur",
+      "divisionId": "barishal",
+      "divisionBn": "বরিশাল",
+      "divisionEn": "Barishal",
+      "networkStatus": "planned",
+      "hubCount": null
+    }
+  ]
+}

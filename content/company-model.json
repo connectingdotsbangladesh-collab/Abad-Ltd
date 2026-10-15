@@ -1,0 +1,300 @@
+{
+  "companyNameBn": "আবাদ লিমিটেড",
+  "companyNameEn": "Abad Limited",
+  "authoritativeSource": "Company model and leadership names supplied in the user brief on 14 October 2026.",
+  "termNormalization": {
+    "input": "কন্টাক্ট ফার্মিং",
+    "publicBn": "চুক্তিভিত্তিক কৃষি",
+    "publicEn": "Contract farming",
+    "reason": "The described model is contractual production coordination. This is a terminology correction, not a change of business model."
+  },
+  "launchAssumptions": {
+    "companyRegistrationVerified": false,
+    "servicesOperationalVerified": false,
+    "activeDistricts": [],
+    "confirmedPartners": [],
+    "realTestimonials": [],
+    "publicMetrics": []
+  },
+  "vision": {
+    "bn": "বাংলাদেশের কৃষিখাতকে ডাটা-ড্রিভেন টেকনোলজির মাধ্যমে আধুনিকীকরণ করে এমন একটি স্বয়ংসম্পূর্ণ ইকোসিস্টেম গড়ে তোলা, যেখানে ৬৪ জেলার প্রান্তিক কৃষক থেকে সাধারণ ক্রেতা পর্যন্ত সবাই একটি শক্তিশালী, স্বচ্ছ ও লাভজনক নেটওয়ার্কের অংশ হতে পারবেন।",
+    "en": "Modernize Bangladesh’s agricultural sector through data-driven technology and build a self-sustaining ecosystem where smallholder farmers and everyday buyers across all 64 districts can participate in a strong, transparent and commercially viable network."
+  },
+  "missions": {
+    "bn": [
+      "কৃষক ও ক্রেতার মধ্যে সরাসরি যোগাযোগের চ্যানেল তৈরি করে মধ্যস্বত্বভোগীর ওপর নির্ভরতা কমানোর সুযোগ তৈরি।",
+      "প্রযুক্তির সাহায্যে আধুনিক সাপ্লাই চেইন, চুক্তিভিত্তিক কৃষি ও স্মার্ট লজিস্টিকস গড়ে তোলা।",
+      "মাল্টি-ব্র্যান্ড ইকোসিস্টেমের মাধ্যমে কৃষককে স্বতন্ত্র ব্র্যান্ড হিসেবে পরিচিত হওয়ার সুযোগ দেওয়া।"
+    ],
+    "en": [
+      "Create direct farmer-buyer communication channels that can reduce reliance on intermediaries.",
+      "Develop technology-enabled supply chains, contract farming and smart logistics.",
+      "Help farmers develop a distinct brand identity through a multi-brand ecosystem."
+    ]
+  },
+  "operatingModel": [
+    {
+      "id": "database",
+      "bn": "দেশব্যাপী কৃষকের ডাটাবেজ ও গবাদিপশুর ট্যাগিং সিস্টেমে উৎপাদন ও মানসংক্রান্ত রেকর্ড।",
+      "en": "A national farmer database and livestock identification system for production and quality records."
+    },
+    {
+      "id": "hubs",
+      "bn": "স্থানীয় ডিলার ও উদ্যোক্তার মাধ্যমে উপজেলা ও জেলা পর্যায়ের ওয়্যারহাউজ বা হাব; লক্ষ্য ৬৪ জেলা।",
+      "en": "Upazila and district warehouses or hubs operated with local dealers and entrepreneurs, with a 64-district ambition."
+    },
+    {
+      "id": "vendors",
+      "bn": "কৃষকের নিজস্ব পেজ বা স্টোরসহ মাল্টি-ভেন্ডর ই-কমার্স প্ল্যাটফর্ম।",
+      "en": "A multi-vendor e-commerce platform with farmer-owned pages or storefronts."
+    },
+    {
+      "id": "logistics",
+      "bn": "নিজস্ব ভ্যান ও অন্যান্য লজিস্টিক সেবার সঙ্গে শেয়ার্ড পরিবহন।",
+      "en": "Shared transport combining owned vans and other logistics services."
+    }
+  ],
+  "farmerEngagement": [
+    {
+      "id": "finance",
+      "bn": "চুক্তিভিত্তিক কৃষির জন্য উপকরণ ও মূলধনের ব্যবস্থা করতে সম্ভাব্য ক্রাউডফান্ডিং প্ল্যাটফর্মের সঙ্গে সংযোগ।",
+      "en": "Connect with potential crowdfunding platforms to coordinate inputs and capital for contract farming."
+    },
+    {
+      "id": "training",
+      "bn": "বাস্তব খামারে নতুন প্রযুক্তি ও উন্নত বীজ প্রদর্শন করে আশেপাশের কৃষকদের শেখানো।",
+      "en": "Demonstrate suitable technologies and improved seeds on farms for neighbouring farmers to learn."
+    },
+    {
+      "id": "inputs",
+      "bn": "প্রয়োজনীয় কৃষি সরঞ্জাম ও প্রযুক্তি প্রতিযোগিতামূলক মূল্যে পৌঁছে দেওয়ার লক্ষ্য।",
+      "en": "Aim to supply relevant tools and technologies at competitive prices."
+    }
+  ],
+  "farmerBenefits": [
+    {
+      "bn": "নিজস্ব পরিচিতি ও ব্র্যান্ড গড়ে তোলা।",
+      "en": "Develop an individual identity and brand."
+    },
+    {
+      "bn": "সরাসরি ক্রেতা, বৃহত্তর বাজার ও স্বচ্ছ মূল্য আলোচনার সুযোগ।",
+      "en": "Access direct buyer discussions, wider markets and transparent pricing."
+    },
+    {
+      "bn": "প্রযোজ্য চুক্তির মাধ্যমে সম্ভাব্য মূলধন ও উপকরণের সমন্বয়।",
+      "en": "Coordinate possible capital and inputs through applicable agreements."
+    }
+  ],
+  "revenueModel": [
+    {
+      "id": "platform",
+      "bn": "কমিশন অথবা সাবস্ক্রিপশন ফি",
+      "en": "Commission or subscription fees"
+    },
+    {
+      "id": "trading",
+      "bn": "পাইকারি সংগ্রহ ও পুনর্বিক্রয় থেকে ট্রেডিং মার্জিন",
+      "en": "Trading margins from wholesale sourcing and resale"
+    },
+    {
+      "id": "logistics",
+      "bn": "পরিবহন ও সেবা ফি",
+      "en": "Logistics and service fees"
+    },
+    {
+      "id": "tools",
+      "bn": "ট্যাগ ও প্রযুক্তিপণ্য সরবরাহের মার্জিন",
+      "en": "Margins on tags and technology tools"
+    },
+    {
+      "id": "sponsorship",
+      "bn": "কৃষিযাত্রা ও মাঠ আয়োজনের স্পন্সরশিপ",
+      "en": "Krishijatra and field-initiative sponsorship"
+    }
+  ],
+  "illustrativeExamplesInternalOnly": {
+    "commissionPercent": 2,
+    "tagMarketPriceBDT": 70,
+    "proposedTagPriceBDT": 60,
+    "crowdfundingReference": "biniyog.io",
+    "instruction": "These are examples in the brief, not approved live pricing or a confirmed partnership. Do not publish rates, partner logos, guaranteed funding, return percentages, or investment offers based on these examples."
+  },
+  "departments": [
+    {
+      "id": "management",
+      "bn": "বোর্ড অফ ডিরেক্টরস / ম্যানেজমেন্ট",
+      "en": "Board of Directors / Management",
+      "scopeBn": "কৌশলগত সিদ্ধান্ত, পার্টনারশিপ ও ভিশন বাস্তবায়ন।",
+      "scopeEn": "Strategic decisions, partnerships and vision delivery."
+    },
+    {
+      "id": "operations",
+      "bn": "অপারেশনস ও লজিস্টিকস",
+      "en": "Operations & Logistics",
+      "scopeBn": "হাব, এজেন্ট, ট্রান্সপোর্টেশন ও ডেলিভারি চেইন।",
+      "scopeEn": "Hubs, agents, transport and delivery coordination."
+    },
+    {
+      "id": "technology",
+      "bn": "টেক ও ডাটা ম্যানেজমেন্ট",
+      "en": "Technology & Data Management",
+      "scopeBn": "ই-কমার্স, অ্যাপ, কৃষকের ডাটাবেজ ও গবাদিপশুর ট্যাগিং।",
+      "scopeEn": "E-commerce, apps, farmer databases and livestock tagging."
+    },
+    {
+      "id": "farming-finance",
+      "bn": "কৃষক সম্পর্ক ও ফাইন্যান্স",
+      "en": "Farmer Relations & Finance",
+      "scopeBn": "চুক্তিভিত্তিক কৃষি, প্রশিক্ষণ ও অর্থায়ন সমন্বয়।",
+      "scopeEn": "Contract farming, training and funding coordination."
+    },
+    {
+      "id": "marketing",
+      "bn": "মার্কেটিং ও B2B সেলস",
+      "en": "Marketing & B2B Sales",
+      "scopeBn": "কৃষকের ব্র্যান্ড প্রচার ও কর্পোরেট সরবরাহ সম্পর্ক।",
+      "scopeEn": "Farmer-brand promotion and institutional supply relationships."
+    }
+  ],
+  "leadership": {
+    "bn": [
+      {
+        "id": "ceo",
+        "nameBn": "রুবায়েত হোসেন",
+        "nameEn": "Rubayet Hossain",
+        "role": "CEO",
+        "title": "প্রধান নির্বাহী কর্মকর্তা",
+        "bio": "আবাদ-এর সামগ্রিক ভিশন, ব্যবসায়িক দিকনির্দেশনা এবং সম্প্রসারণে নেতৃত্ব দেন। কৃষক, কর্পোরেট ক্রেতা ও সহযোগীদের মধ্যে দীর্ঘমেয়াদি সম্পর্ক গড়ে তোলাই তাঁর কার্যপরিধির মূল অংশ।",
+        "responsibilities": [
+          "কৃষকদের ডাটা-ভিত্তিক প্ল্যাটফর্মে যুক্ত করে স্বতন্ত্র ব্র্যান্ড হিসেবে প্রতিষ্ঠার দীর্ঘমেয়াদি কৌশল প্রণয়ন।",
+          "এগ্রো-কোম্পানি, কর্পোরেট প্রতিষ্ঠান, রেস্টুরেন্ট চেইন ও সুপারশপের সঙ্গে B2B সম্পর্ক ও বিক্রয় চুক্তি গড়ে তোলা।",
+          "সম্ভাব্য ফান্ডিং প্ল্যাটফর্ম ও স্পন্সরদের সঙ্গে সম্পর্ক তৈরি এবং কৃষিযাত্রা ও মাঠ পর্যায়ের আয়োজনে সহযোগিতা সংগ্রহ।",
+          "আবাদ-এর ব্র্যান্ড কৌশল ও মাল্টি-ব্র্যান্ড ইকোসিস্টেমের প্রচার পরিকল্পনায় নেতৃত্ব।"
+        ],
+        "photo": null
+      },
+      {
+        "id": "cto",
+        "nameBn": "নায়েফ মোঃ হাসিব",
+        "nameEn": "Nayeef Mohammad Hashib",
+        "role": "CTO",
+        "title": "চিফ টেকনোলজি অফিসার",
+        "bio": "আবাদ-এর ডিজিটাল প্ল্যাটফর্ম, ডাটা ব্যবস্থাপনা ও প্রযুক্তিগত নিরাপত্তার দায়িত্বে আছেন। বাংলায় সহজ ব্যবহারযোগ্য অভিজ্ঞতা এবং ভবিষ্যৎ সম্প্রসারণের উপযোগী অবকাঠামো তাঁর কাজের কেন্দ্র।",
+        "responsibilities": [
+          "কৃষকের স্টোর, প্রোফাইল ও অর্ডার ড্যাশবোর্ডসহ মাল্টি-ভেন্ডর ওয়েবসাইট ও অ্যাপের উন্নয়ন।",
+          "গবাদিপশুর ট্যাগিং সফটওয়্যার, ভবিষ্যৎ IoT সংযোগ এবং কৃষকদের কেন্দ্রীয় ডাটাবেজের স্থাপত্য তৈরি।",
+          "স্কেলেবল ক্লাউড অবকাঠামো, নিরাপদ পেমেন্ট সংযোগ এবং অনুমোদিত হলে এসক্রো প্রক্রিয়ার প্রযুক্তিগত ব্যবস্থাপনা।",
+          "প্রান্তিক কৃষকের জন্য সহজ, বাংলা-ভিত্তিক UI/UX ও ডাটা সুরক্ষা নিশ্চিত করা।"
+        ],
+        "photo": null
+      },
+      {
+        "id": "coo",
+        "nameBn": "ইউসুব ইলিয়াস",
+        "nameEn": "Yousub Ilias",
+        "role": "COO",
+        "title": "চিফ অপারেটিং অফিসার",
+        "bio": "মাঠ পর্যায়ের কার্যক্রম, কৃষক সম্পর্ক ও সরবরাহ ব্যবস্থাপনায় নেতৃত্ব দেন। স্থানীয় হাব, পরিবহন এবং পণ্যের মান নিয়ন্ত্রণের মধ্যে সমন্বয় গড়ে তোলেন।",
+        "responsibilities": [
+          "৬৪ জেলায় সম্প্রসারণের লক্ষ্যে স্থানীয় এজেন্ট ও ডিলারদের সঙ্গে জেলা ও উপজেলা পর্যায়ের হাব পরিকল্পনা ও পরিচালনা।",
+          "খামার থেকে ক্রেতা পর্যন্ত সরবরাহ ব্যবস্থাপনা এবং নিজস্ব ও শেয়ার্ড পরিবহনের সমন্বয়।",
+          "চুক্তিভিত্তিক কৃষি, সোলার পাম্প, ড্রিপ ইরিগেশন ও নতুন প্রযুক্তির মাঠ পর্যায়ের বাস্তবায়ন ও প্রশিক্ষণ।",
+          "সংগ্রহ, সংরক্ষণ ও ডেলিভারির প্রতিটি ধাপে কৃষিপণ্য ও গবাদিপশুর মান নিয়ন্ত্রণ প্রক্রিয়া তদারকি।"
+        ],
+        "photo": null
+      },
+      {
+        "id": "cfo",
+        "nameBn": "শাহরিয়ার তানভীর আহমদ",
+        "nameEn": "Shahriar Tanvir Ahmad",
+        "role": "CFO",
+        "title": "চিফ ফিন্যান্সিয়াল অফিসার",
+        "bio": "আবাদ-এর আর্থিক পরিকল্পনা, আয়-ব্যয়ের হিসাব, মূলধন বণ্টন ও প্রতিষ্ঠান গঠনের কাজ পরিচালনা করেন। কার্যকর বাজেট ও স্বচ্ছ হিসাব ব্যবস্থার ওপর গুরুত্ব দেন।",
+        "responsibilities": [
+          "কমিশন, সাবস্ক্রিপশন, ট্রেডিং মার্জিন, লজিস্টিকস ও প্রযুক্তিপণ্য থেকে সম্ভাব্য আয় পরিকল্পনা ও হিসাব।",
+          "অনুমোদিত সহযোগীর মাধ্যমে পাওয়া কৃষি অর্থায়নের বণ্টন, হিসাব, চুক্তির শর্ত ও নিষ্পত্তির তদারকি।",
+          "স্থানীয় স্টোরেজ ও শেয়ার্ড লজিস্টিকসসহ পরিচালন ব্যয় নিয়ন্ত্রণ এবং বিপণন ও পরিবহনের বাজেট।",
+          "RJSC-তে MoA/AoA, ট্রেড লাইসেন্স, TIN, VAT ও করসংক্রান্ত প্রয়োজনীয় প্রস্তুতি ও পরিপালন সমন্বয়।"
+        ],
+        "photo": null
+      }
+    ],
+    "en": [
+      {
+        "id": "ceo",
+        "nameBn": "রুবায়েত হোসেন",
+        "nameEn": "Rubayet Hossain",
+        "role": "CEO",
+        "title": "Chief Executive Officer",
+        "bio": "Leads Abad’s vision, business direction and growth, with a focus on long-term relationships between farmers, institutional buyers and ecosystem collaborators.",
+        "responsibilities": [
+          "Set the long-term strategy for a data-led platform that helps farmers develop independent brands.",
+          "Develop B2B relationships and supply agreements with agro-businesses, corporations, restaurant chains and supermarkets.",
+          "Build relationships with potential funding platforms and sponsors for Krishijatra and field initiatives.",
+          "Lead Abad’s brand strategy and promotion of its multi-brand ecosystem."
+        ],
+        "photo": null
+      },
+      {
+        "id": "cto",
+        "nameBn": "নায়েফ মোঃ হাসিব",
+        "nameEn": "Nayeef Mohammad Hashib",
+        "role": "CTO",
+        "title": "Chief Technology Officer",
+        "bio": "Responsible for Abad’s digital platform, data systems and technical security, with an emphasis on accessible Bangla experiences and infrastructure that can grow with the network.",
+        "responsibilities": [
+          "Develop the multi-vendor website and app, including farmer profiles, storefronts and order dashboards.",
+          "Design livestock tagging software, future IoT integrations and a central farmer database.",
+          "Manage scalable cloud infrastructure, secure payment integrations and escrow workflows if approved for implementation.",
+          "Create simple Bangla-first interfaces for smallholder farmers and protect platform data."
+        ],
+        "photo": null
+      },
+      {
+        "id": "coo",
+        "nameBn": "ইউসুব ইলিয়াস",
+        "nameEn": "Yousub Ilias",
+        "role": "COO",
+        "title": "Chief Operating Officer",
+        "bio": "Leads field operations, farmer relationships and supply coordination, connecting local hubs, transport arrangements and product quality processes.",
+        "responsibilities": [
+          "Plan and coordinate district and upazila hubs with local agents and dealers toward the 64-district expansion goal.",
+          "Coordinate the farm-to-buyer supply chain and owned or shared transport.",
+          "Manage field implementation and training for contract farming, solar pumps, drip irrigation and new technologies.",
+          "Oversee quality processes across collection, storage and delivery of agricultural produce and livestock."
+        ],
+        "photo": null
+      },
+      {
+        "id": "cfo",
+        "nameBn": "শাহরিয়ার তানভীর আহমদ",
+        "nameEn": "Shahriar Tanvir Ahmad",
+        "role": "CFO",
+        "title": "Chief Financial Officer",
+        "bio": "Manages financial planning, income and expenditure, capital allocation and company formation, with a focus on practical budgeting and transparent accounting.",
+        "responsibilities": [
+          "Plan and account for potential commission, subscription, trading, logistics and technology-product revenue.",
+          "Oversee allocation, accounting, contractual terms and settlement for agricultural funding arranged through approved collaborators.",
+          "Control operating costs through local storage and shared logistics, and prepare marketing and transport budgets.",
+          "Coordinate company-formation documentation, MoA/AoA, trade licensing, TIN, VAT and tax-related preparation and compliance."
+        ],
+        "photo": null
+      }
+    ]
+  },
+  "nameReview": "Bangla names are authoritative. English spellings are provisional transliterations: confirm with each named person before public release. Do not substitute spellings remembered from another organization.",
+  "unprovidedOwnerItems": [
+    "Abad contact email",
+    "Abad phone/WhatsApp",
+    "office address",
+    "production domain",
+    "registration status and identifiers",
+    "executive portraits",
+    "English name spellings",
+    "approved active services/hubs",
+    "actual partners and case studies",
+    "legal/privacy owner contact",
+    "hosting and database credentials",
+    "authorized farm photographs"
+  ]
+}

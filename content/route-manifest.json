@@ -1,0 +1,42 @@
+{
+  "locales": [
+    "bn",
+    "en"
+  ],
+  "defaultLocale": "bn",
+  "rootRedirect": "/bn",
+  "publicRoutes": [
+    "/",
+    "/about",
+    "/ecosystem",
+    "/services",
+    "/farmers",
+    "/buyers",
+    "/partners",
+    "/network",
+    "/marketplace",
+    "/insights",
+    "/faq",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/services/farmer-brands",
+    "/services/market-access",
+    "/services/data-traceability",
+    "/services/hubs-logistics",
+    "/services/contract-farming",
+    "/services/inputs-technology",
+    "/services/training-demonstration",
+    "/services/field-events"
+  ],
+  "optionalArticleRoutes": [],
+  "privateRoutes": [
+    "/admin"
+  ],
+  "excludedFromSitemap": [
+    "/admin",
+    "draft articles",
+    "demo preview routes"
+  ],
+  "note": "The root redirects to /bn. Article drafts are not public until approved. All relative public paths get the active locale prefix."
+}
