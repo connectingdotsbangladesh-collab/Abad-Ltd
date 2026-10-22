@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Locale, SiteCopy } from "@/lib/types";
-import { Menu, X, ChevronDown, ArrowRight, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Globe, ShoppingCart } from "lucide-react";
 import { ConnectModal } from "@/components/ui/ConnectModal";
 
 interface HeaderProps {
@@ -147,7 +147,17 @@ export function Header({ locale, copy }: HeaderProps) {
           </nav>
 
           {/* Actions: Language Switcher & Connect CTA */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Prominent Online Store CTA */}
+            <Link
+              href={`/${locale}/store`}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm shadow-xs transition-all hover:scale-105 active:scale-95 border border-emerald-600/40"
+              aria-label={locale === "bn" ? "আবাদ অনলাইন স্টোর" : "Abad Online Store"}
+            >
+              <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-200" />
+              <span>{locale === "bn" ? "অনলাইন স্টোর" : "Store"}</span>
+            </Link>
+
             {/* Language Toggle */}
             <div
               className="flex items-center bg-canvas rounded-lg p-1 border border-border text-xs font-semibold"
@@ -247,6 +257,15 @@ export function Header({ locale, copy }: HeaderProps) {
             </div>
 
             <div className="pt-6 border-t border-border mt-6 flex flex-col gap-3">
+              <Link
+                href={`/${locale}/store`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-base min-h-[48px] font-bold rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center gap-2 shadow-soft"
+              >
+                <ShoppingCart className="w-5 h-5 text-emerald-200" />
+                <span>{locale === "bn" ? "🛒 আবাদ অনলাইন স্টোরে যান" : "🛒 Visit Abad Online Store"}</span>
+              </Link>
+
               <button
                 type="button"
                 onClick={() => {

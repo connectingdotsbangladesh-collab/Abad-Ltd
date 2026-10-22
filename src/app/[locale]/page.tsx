@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Locale } from "@/lib/types";
@@ -14,6 +14,7 @@ import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { SisterBrandsStrip } from "@/components/sections/SisterBrandsStrip";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -40,6 +41,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <HeroSection locale={locale as Locale} copy={copy} />
       <GoalStrip copy={copy} />
+      <SisterBrandsStrip locale={locale as Locale} />
       <ProblemsSection copy={copy} />
       <PlannedServicesSection locale={locale as Locale} copy={copy} />
       <EcosystemSection locale={locale as Locale} copy={copy} />

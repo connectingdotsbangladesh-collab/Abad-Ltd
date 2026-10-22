@@ -1,9 +1,8 @@
-﻿import React from "react";
+import React from "react";
 import { notFound } from "next/navigation";
 import { Locale } from "@/lib/types";
 import { getSiteCopy } from "@/lib/content";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { LayoutShell } from "@/components/layout/LayoutShell";
 
 export function generateStaticParams() {
   return [{ locale: "bn" }, { locale: "en" }];
@@ -24,15 +23,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const copy = getSiteCopy(locale as Locale);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <a href="#main-content" className="skip-link">
-        {copy.common.skipToContent}
-      </a>
-      <Header locale={locale as Locale} copy={copy} />
-      <main id="main-content" className="flex-1">
-        {children}
-      </main>
-      <Footer locale={locale as Locale} copy={copy} />
-    </div>
+    <LayoutShell locale={locale as Locale} copy={copy}>
+      {children}
+    </LayoutShell>
   );
 }

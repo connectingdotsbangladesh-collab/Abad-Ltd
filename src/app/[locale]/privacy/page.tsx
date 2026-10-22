@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Locale } from "@/lib/types";
@@ -65,9 +65,9 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
               </section>
 
               <section>
-                <h2 className="text-xl font-bold text-brand-navy mb-3">ডেমো ও চালু ফর্ম</h2>
+                <h2 className="text-xl font-bold text-brand-navy mb-3">অনুসন্ধান জমা ও ট্র্যাকিং</h2>
                 <p>
-                  প্রিভিউ বা ডেমো মোডে দেখানো ফর্ম আপনার তথ্য আবাদ-এর কাছে পাঠায় বা সংরক্ষণ করে না। চালু ফর্মে তথ্য সফলভাবে গ্রহণ করা হলে একটি রেফারেন্স নম্বর দেখানো হবে। ব্যর্থ বা অসম্পূর্ণ জমা গ্রহণ হয়েছে বলে দেখানো হবে না।
+                  অফিসিয়াল ফর্মে আপনার অনুসন্ধান সফলভাবে গ্রহণ করা হলে একটি স্বয়ংক্রিয় রেফারেন্স নম্বর প্রদান করা হয়, যার মাধ্যমে আপনার অনুসন্ধানের অগ্রগতি ট্র্যাক করা সম্ভব।
                 </p>
               </section>
 
@@ -109,9 +109,9 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
               </section>
 
               <section>
-                <h2 className="text-xl font-bold text-brand-navy mb-3">Preview and Live Forms</h2>
+                <h2 className="text-xl font-bold text-brand-navy mb-3">Enquiry Submissions & Tracking</h2>
                 <p>
-                  Forms marked preview or demo do not send or store your details with Abad. A live form displays a reference number after an enquiry is successfully received.
+                  Official enquiry forms generate an automated reference number upon successful receipt, allowing you to track the progress and handling of your enquiry.
                 </p>
               </section>
 
