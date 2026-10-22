@@ -37,6 +37,7 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const mobileInputRef = useRef<HTMLInputElement>(null);
 
   // Close search suggestions on route change or click outside
   useEffect(() => {
@@ -70,6 +71,13 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
     }
   }, [searchQuery]);
 
+  // Focus mobile input when toggled
+  useEffect(() => {
+    if (showMobileSearch && mobileInputRef.current) {
+      setTimeout(() => mobileInputRef.current?.focus(), 100);
+    }
+  }, [showMobileSearch]);
+
   const handleLocaleSwitch = (newLocale: "bn" | "en") => {
     if (newLocale === locale) return;
     const segments = pathname.split("/").filter(Boolean);
@@ -96,7 +104,6 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
     english: string;
     href: string;
     icon: React.ReactNode;
-    colorClass: string;
   }[] = [
     {
       id: "all",
@@ -104,7 +111,6 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
       english: "Storefront",
       href: `/${locale}/store`,
       icon: <Store className="w-3.5 h-3.5" />,
-      colorClass: "hover:text-emerald-700",
     },
     {
       id: "soteja",
@@ -112,7 +118,6 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
       english: "Fresh Produce",
       href: `/${locale}/soteja`,
       icon: <Leaf className="w-3.5 h-3.5 text-emerald-600" />,
-      colorClass: "hover:text-emerald-700 data-[active=true]:border-emerald-600",
     },
     {
       id: "rosod",
@@ -120,7 +125,6 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
       english: "Pantry Staples",
       href: `/${locale}/rosod`,
       icon: <Wheat className="w-3.5 h-3.5 text-amber-700" />,
-      colorClass: "hover:text-amber-700 data-[active=true]:border-amber-700",
     },
     {
       id: "sudha",
@@ -128,53 +132,56 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
       english: "Pure Dairy",
       href: `/${locale}/sudha`,
       icon: <Milk className="w-3.5 h-3.5 text-sky-700" />,
-      colorClass: "hover:text-sky-700 data-[active=true]:border-sky-700",
     },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FCFBF8]/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs transition-colors">
+    <header className="sticky top-0 z-40 w-full bg-[#FCFBF8]/95 backdrop-blur-md border-b border-stone-200/80 shadow-2xs transition-colors">
       {/* Top Bar Announcement */}
-      <div className="bg-emerald-900 text-emerald-50 text-[11px] sm:text-xs py-1.5 px-3.5">
-        <div className="max-w-[1240px] mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
-            <span className="bg-emerald-700 px-1.5 py-0.2 rounded text-[10px] font-bold uppercase tracking-wider">
+      <div className="bg-emerald-950 text-emerald-50 text-[10px] sm:text-xs py-1 px-3 sm:px-4">
+        <div className="max-w-[1240px] mx-auto flex items-center justify-between gap-2">
+          {/* Promo */}
+          <div className="flex items-center gap-1.5 overflow-hidden text-ellipsis whitespace-nowrap min-w-0">
+            <span className="bg-emerald-700 px-1.5 py-0.2 rounded text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shrink-0">
               {locale === "bn" ? "অফার" : "PROMO"}
             </span>
             <span className="truncate">
               {locale === "bn"
-                ? "৳১৫০০ এর বেশি অর্ডারে সমগ্র ঢাকা শহরে ফ্রি ডেলিভারি!"
-                : "Free scheduled delivery across Dhaka on orders over ৳1500!"}
+                ? "৳১৫০০+ অর্ডারে ঢাকায় ফ্রি ডেলিভারি!"
+                : "Free Dhaka delivery on ৳1500+!"}
             </span>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0">
+          {/* Right Actions */}
+          <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
             <Link
               href={`/${locale}`}
-              className="text-emerald-200 hover:text-white flex items-center gap-1 transition-colors text-[11px]"
+              className="text-emerald-200 hover:text-white flex items-center gap-1 transition-colors text-[10px] sm:text-[11px] whitespace-nowrap"
             >
-              <ArrowLeft className="w-3 h-3" />
-              <span>{locale === "bn" ? "কর্পোরেট ওয়েবসাইট" : "Corporate Site"}</span>
+              <ArrowLeft className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+              <span className="hidden xs:inline">{locale === "bn" ? "কর্পোরেট সাইট" : "Corporate"}</span>
+              <span className="xs:hidden">{locale === "bn" ? "আবাদ" : "Main"}</span>
             </Link>
 
             {/* Language Toggle */}
-            <div className="flex items-center gap-1 font-semibold text-[11px]">
+            <div className="flex items-center gap-0.5 font-semibold text-[10px] sm:text-[11px] bg-emerald-900/60 p-0.5 rounded-md">
               <button
                 type="button"
                 onClick={() => handleLocaleSwitch("bn")}
-                className={`px-1.5 py-0.5 rounded ${
-                  locale === "bn" ? "bg-white text-emerald-950 font-bold" : "text-emerald-200 hover:text-white"
+                className={`px-1.5 py-0.5 rounded transition-all min-h-[22px] flex items-center ${
+                  locale === "bn" ? "bg-white text-emerald-950 font-bold shadow-2xs" : "text-emerald-200 hover:text-white"
                 }`}
+                aria-pressed={locale === "bn"}
               >
-                বাংলা
+                বাং
               </button>
-              <span className="text-emerald-400/40">|</span>
               <button
                 type="button"
                 onClick={() => handleLocaleSwitch("en")}
-                className={`px-1.5 py-0.5 rounded ${
-                  locale === "en" ? "bg-white text-emerald-950 font-bold" : "text-emerald-200 hover:text-white"
+                className={`px-1.5 py-0.5 rounded transition-all min-h-[22px] flex items-center ${
+                  locale === "en" ? "bg-white text-emerald-950 font-bold shadow-2xs" : "text-emerald-200 hover:text-white"
                 }`}
+                aria-pressed={locale === "en"}
               >
                 EN
               </button>
@@ -184,14 +191,14 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-3 sm:gap-6">
+      <div className="max-w-[1240px] mx-auto px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-6">
         {/* Brand Lockup */}
         <Link
           href={`/${locale}/store`}
-          className="flex items-center gap-2.5 sm:gap-3 group shrink-0"
+          className="flex items-center gap-2 sm:gap-3 group shrink-0"
           aria-label={locale === "bn" ? "আবাদ অনলাইন স্টোর" : "Abad Online Store"}
         >
-          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl overflow-hidden bg-emerald-950 border border-emerald-900/20 shadow-xs relative shrink-0 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl overflow-hidden bg-emerald-950 border border-emerald-900/20 shadow-2xs relative shrink-0 group-hover:scale-105 transition-transform">
             <Image
               src="/brand/abad-logo.jpg"
               alt="Abad Limited Logo"
@@ -202,15 +209,15 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
             />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="text-lg sm:text-2xl font-black tracking-tight text-stone-900 group-hover:text-emerald-800 transition-colors leading-none">
+            <div className="flex items-center gap-1">
+              <span className="text-base sm:text-2xl font-black tracking-tight text-stone-900 group-hover:text-emerald-800 transition-colors leading-none">
                 {locale === "bn" ? "আবাদ" : "Abad"}
               </span>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 tracking-wide uppercase leading-none">
+              <span className="text-[9px] sm:text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 tracking-wide uppercase leading-none">
                 STORE
               </span>
             </div>
-            <span className="text-[9px] sm:text-[10px] font-medium text-stone-500 leading-tight mt-0.5">
+            <span className="text-[9px] sm:text-[10px] font-medium text-stone-500 leading-tight mt-0.5 truncate max-w-[120px] sm:max-w-none">
               {locale === "bn" ? "সতেজা • রসদ • সুধা" : "Soteja • Rosod • Sudha"}
             </span>
           </div>
@@ -244,7 +251,7 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
             )}
           </div>
 
-          {/* Search Dropdown Results */}
+          {/* Desktop Search Dropdown Results */}
           {isSearchOpen && (
             <div className="absolute top-full left-0 right-0 mt-1.5 bg-white rounded-2xl shadow-xl border border-stone-200 p-2 z-50 animate-fadeIn">
               <div className="px-3 py-1.5 text-xs font-semibold text-stone-500 flex justify-between border-b border-stone-100">
@@ -310,23 +317,23 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
           )}
         </div>
 
-        {/* Right Actions: Search Mobile Toggle & Cart Trigger */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Mobile Search Icon */}
+        {/* Right Actions on Mobile / Desktop */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          {/* Mobile Search Toggle */}
           <button
             type="button"
             onClick={() => setShowMobileSearch(!showMobileSearch)}
-            className="md:hidden p-2 text-stone-700 hover:text-emerald-800 rounded-xl hover:bg-stone-100 transition-colors"
+            className="md:hidden p-2 text-stone-700 hover:text-emerald-800 rounded-xl hover:bg-stone-100 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label="Toggle search"
           >
-            <Search className="w-5 h-5" />
+            {showMobileSearch ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
           </button>
 
           {/* Cart Drawer Button */}
           <button
             type="button"
             onClick={openDrawer}
-            className="relative flex items-center gap-2.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white transition-all shadow-xs"
+            className="relative flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 active:scale-95 text-white transition-all shadow-xs min-h-[40px]"
             aria-label={`${locale === "bn" ? "কার্ট খুলুন" : "Open Cart"}, ${totalCount} items`}
           >
             <div className="relative">
@@ -352,7 +359,7 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-stone-700 hover:text-emerald-800 rounded-xl hover:bg-stone-100 transition-colors"
+            className="lg:hidden p-2 text-stone-700 hover:text-emerald-800 rounded-xl hover:bg-stone-100 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label="Menu"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -362,26 +369,27 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
 
       {/* Mobile Search Bar Expandable */}
       {showMobileSearch && (
-        <div className="md:hidden px-3.5 pb-3 animate-fadeIn">
+        <div className="md:hidden px-3.5 pb-3 pt-1 animate-fadeIn border-t border-stone-100 bg-white">
           <div className="relative">
             <input
+              ref={mobileInputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={
                 locale === "bn"
-                  ? "তাজা শাকসবজি, চাল, ডাল, তেল, ঘি খুঁজুন..."
+                  ? "শাকসবজি, চাল, ডাল, তেল, ঘি খুঁজুন..."
                   : "Search fresh food and grocery..."
               }
-              className="w-full bg-white pl-10 pr-9 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30 shadow-2xs"
-              autoFocus
+              className="w-full bg-stone-50 pl-10 pr-9 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-700/30"
             />
             <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 p-0.5"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 p-1"
+                aria-label="Clear"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -389,7 +397,7 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
           </div>
 
           {searchQuery.trim().length > 1 && (
-            <div className="mt-2 bg-white rounded-xl shadow-lg border border-stone-200 p-2 max-h-64 overflow-y-auto">
+            <div className="mt-2 bg-white rounded-xl shadow-lg border border-stone-200 p-2 max-h-64 overflow-y-auto divide-y divide-stone-100">
               {searchResults.length === 0 ? (
                 <div className="p-3 text-center text-xs text-stone-500">
                   {locale === "bn" ? "কোনো পণ্য পাওয়া যায়নি।" : "No products found."}
@@ -403,12 +411,20 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
                       setShowMobileSearch(false);
                       setSearchQuery("");
                     }}
-                    className="flex items-center gap-2 p-2 hover:bg-stone-50 rounded-lg text-xs"
+                    className="flex items-center gap-2.5 py-2.5 px-2 hover:bg-stone-50 rounded-lg text-xs"
                   >
-                    <span className="font-bold text-stone-900 flex-1 truncate">
-                      {locale === "bn" ? p.nameBn : p.nameEn}
-                    </span>
-                    <span className="text-emerald-800 font-bold">
+                    <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-stone-100 shrink-0">
+                      <Image src={p.image} alt={p.nameEn} fill className="object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-stone-900 truncate">
+                        {locale === "bn" ? p.nameBn : p.nameEn}
+                      </h4>
+                      <span className="text-[10px] text-stone-400">
+                        {locale === "bn" ? p.categoryBn : p.categoryEn}
+                      </span>
+                    </div>
+                    <span className="text-emerald-800 font-bold shrink-0">
                       ৳{formatNumber(p.price)}
                     </span>
                   </Link>
@@ -421,11 +437,11 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
 
       {/* Brand Navigation Tabs Bar */}
       <nav
-        className="border-t border-stone-200/60 bg-white/80 overflow-x-auto scrollbar-none"
+        className="border-t border-stone-200/60 bg-white/90 overflow-x-auto scrollbar-none"
         aria-label="Brand Navigation"
       >
-        <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1 sm:gap-2 py-1.5 shrink-0">
+        <div className="max-w-[1240px] mx-auto px-3 sm:px-6 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 py-1.5 shrink-0 overflow-x-auto scrollbar-none w-full sm:w-auto">
             {navBrands.map((brand) => {
               const isActive =
                 brand.id === "all"
@@ -436,10 +452,9 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
                 <Link
                   key={brand.id}
                   href={brand.href}
-                  data-active={isActive}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[34px] ${
                     isActive
-                      ? "bg-stone-900 text-white shadow-xs"
+                      ? "bg-stone-900 text-white shadow-2xs font-bold"
                       : "text-stone-700 hover:bg-stone-100 hover:text-stone-950"
                   }`}
                 >
@@ -477,7 +492,7 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
                 key={brand.id}
                 href={brand.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-between p-2.5 rounded-xl text-sm font-bold text-stone-800 hover:bg-stone-50"
+                className="flex items-center justify-between p-2.5 rounded-xl text-sm font-bold text-stone-800 hover:bg-stone-50 min-h-[44px]"
               >
                 <div className="flex items-center gap-2">
                   {brand.icon}
@@ -492,14 +507,14 @@ export function StoreHeader({ locale }: StoreHeaderProps) {
             <Link
               href={`/${locale}/cart`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2.5 rounded-xl bg-stone-100 text-stone-800 text-xs font-bold text-center"
+              className="p-3 rounded-xl bg-stone-100 text-stone-800 text-xs font-bold text-center min-h-[44px] flex items-center justify-center"
             >
               {locale === "bn" ? "কার্ট পেজ দেখুন" : "View Cart Details"}
             </Link>
             <Link
               href={`/${locale}/checkout`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2.5 rounded-xl bg-emerald-700 text-white text-xs font-bold text-center"
+              className="p-3 rounded-xl bg-emerald-700 text-white text-xs font-bold text-center min-h-[44px] flex items-center justify-center shadow-xs"
             >
               {locale === "bn" ? "সরাসরি চেকআউট" : "Direct Checkout"}
             </Link>

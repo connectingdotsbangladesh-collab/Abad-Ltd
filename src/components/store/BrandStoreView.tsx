@@ -16,6 +16,8 @@ import {
   Milk,
   Layers,
   ChevronDown,
+  SlidersHorizontal,
+  X,
 } from "lucide-react";
 
 interface BrandStoreViewProps {
@@ -96,21 +98,21 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
       accentBg: "bg-emerald-600",
       badgeText: "text-emerald-300",
       pillActive: "bg-emerald-700 text-white border-emerald-800",
-      icon: <Leaf className="w-6 h-6 text-emerald-400" />,
+      icon: <Leaf className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-400" />,
     },
     rosod: {
       gradient: "from-amber-950 via-stone-900 to-amber-900",
       accentBg: "bg-amber-700",
       badgeText: "text-amber-300",
       pillActive: "bg-amber-700 text-white border-amber-800",
-      icon: <Wheat className="w-6 h-6 text-amber-400" />,
+      icon: <Wheat className="w-4 h-4 sm:w-6 sm:h-6 text-amber-400" />,
     },
     sudha: {
       gradient: "from-sky-950 via-stone-900 to-sky-900",
       accentBg: "bg-sky-700",
       badgeText: "text-sky-300",
       pillActive: "bg-sky-700 text-white border-sky-800",
-      icon: <Milk className="w-6 h-6 text-sky-400" />,
+      icon: <Milk className="w-4 h-4 sm:w-6 sm:h-6 text-sky-400" />,
     },
   }[brandId];
 
@@ -118,7 +120,7 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
     <div className="min-h-screen bg-[#FBF9F4] text-stone-900 pb-20">
       {/* Brand Hero */}
       <section
-        className={`relative overflow-hidden bg-gradient-to-r ${brandThemes.gradient} text-white pt-10 pb-16 sm:pt-14 sm:pb-20 shadow-lg`}
+        className={`relative overflow-hidden bg-gradient-to-r ${brandThemes.gradient} text-white pt-6 pb-10 sm:pt-14 sm:pb-20 shadow-md`}
       >
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <Image
@@ -130,34 +132,34 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
           />
         </div>
 
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 relative z-10">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-xs border border-white/20 text-xs font-bold tracking-wide">
+        <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 relative z-10">
+          <div className="max-w-2xl space-y-2 sm:space-y-4">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 backdrop-blur-xs border border-white/20 text-[11px] sm:text-xs font-bold tracking-wide">
               {brandThemes.icon}
               <span className={brandThemes.badgeText}>
-                {locale === "bn" ? "আবাদ লিমিটেড সিস্টার ব্র্যান্ড" : "Abad Sister Brand"}
+                {locale === "bn" ? "আবাদ সিস্টার ব্র্যান্ড" : "Abad Sister Brand"}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            <h1 className="text-2xl sm:text-5xl font-black text-white tracking-tight leading-tight">
               {locale === "bn" ? brand.nameBn : brand.nameEn}
             </h1>
 
-            <p className="text-sm sm:text-lg text-stone-200 font-medium">
+            <p className="text-xs sm:text-lg text-stone-200 font-medium">
               {locale === "bn" ? brand.taglineBn : brand.taglineEn}
             </p>
 
-            <p className="text-xs sm:text-sm text-stone-300/90 leading-relaxed pt-1">
+            <p className="text-[11px] sm:text-sm text-stone-300/90 leading-relaxed pt-0.5 line-clamp-3 sm:line-clamp-none">
               {locale === "bn" ? brand.descriptionBn : brand.descriptionEn}
             </p>
 
-            {/* Breadcrumb back to all store */}
-            <div className="pt-3">
+            {/* Breadcrumb back */}
+            <div className="pt-2 sm:pt-3">
               <Link
                 href={`/${locale}/store`}
-                className="inline-flex items-center gap-1.5 text-xs text-white/80 hover:text-white underline font-semibold"
+                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs text-white/80 hover:text-white underline font-semibold min-h-[36px]"
               >
-                ← {locale === "bn" ? "সকল ব্র্যান্ডের স্টোরফ্রন্টে ফিরে যান" : "Back to Main Storefront"}
+                ← {locale === "bn" ? "সকল ব্র্যান্ডের স্টোরফ্রন্ট" : "All Brands Store"}
               </Link>
             </div>
           </div>
@@ -165,21 +167,20 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
       </section>
 
       {/* Main Content Area: Category Nav + Filters + Products */}
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 pt-8">
+      <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 pt-5 sm:pt-8">
         {/* Category Navigation Pills */}
-        <div className="mb-6 overflow-x-auto scrollbar-none pb-2">
-          <div className="flex items-center gap-2 shrink-0">
+        <div className="mb-4 sm:mb-6 overflow-x-auto scrollbar-none pb-1">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={() => setSelectedCategory("all")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all whitespace-nowrap ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all whitespace-nowrap min-h-[36px] sm:min-h-[40px] ${
                 selectedCategory === "all"
                   ? brandThemes.pillActive
                   : "bg-white text-stone-700 border-stone-200 hover:border-stone-400"
               }`}
             >
-              {locale === "bn" ? `সব ${brand.nameBn} পণ্য` : `All ${brand.nameEn}`} (
-              {brandProducts.length})
+              {locale === "bn" ? `সব ${brand.nameBn}` : `All ${brand.nameEn}`} ({brandProducts.length})
             </button>
 
             {brandCategories.map((cat) => (
@@ -187,7 +188,7 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
                 key={cat.id}
                 type="button"
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all whitespace-nowrap flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold border transition-all whitespace-nowrap flex items-center gap-1.5 min-h-[36px] sm:min-h-[40px] ${
                   selectedCategory === cat.id
                     ? brandThemes.pillActive
                     : "bg-white text-stone-700 border-stone-200 hover:border-stone-400"
@@ -201,26 +202,60 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
         </div>
 
         {/* Filter and Sort Control Bar */}
-        <div className="bg-white rounded-2xl border border-stone-200/90 p-4 mb-6 shadow-2xs">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            {/* Left: Quick filters (Desktop) */}
+        <div className="bg-white rounded-2xl border border-stone-200/90 p-3 sm:p-4 mb-5 shadow-2xs">
+          {/* Mobile Filter Summary & Toggle */}
+          <div className="flex items-center justify-between gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold min-h-[38px]"
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5 text-stone-600" />
+              <span>{locale === "bn" ? "ফিল্টার" : "Filters"}</span>
+              {hasActiveFilters && (
+                <span className="w-2 h-2 rounded-full bg-emerald-600" />
+              )}
+            </button>
+
+            {/* Mobile Sort Dropdown */}
+            <div className="flex items-center gap-1.5">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+                className="text-xs font-semibold bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-2 focus:outline-none min-h-[38px]"
+              >
+                <option value="default">{locale === "bn" ? "বাছাই: সাধারণ" : "Default"}</option>
+                <option value="price-asc">{locale === "bn" ? "দাম: কম-বেশি" : "Price: Low"}</option>
+                <option value="price-desc">{locale === "bn" ? "দাম: বেশি-কম" : "Price: High"}</option>
+                <option value="name-asc">{locale === "bn" ? "নাম: ক-ঁ" : "Name: A-Z"}</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Collapsible Mobile Filters / Always visible on Desktop */}
+          <div
+            className={`${
+              mobileFilterOpen ? "block mt-3 pt-3 border-t border-stone-100" : "hidden"
+            } md:flex flex-col md:flex-row md:items-center justify-between gap-4`}
+          >
+            {/* Left: Quick filters */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-stone-700">
               {/* Availability Filter */}
-              <label className="flex items-center gap-2 cursor-pointer select-none">
+              <label className="flex items-center gap-2 cursor-pointer select-none min-h-[36px]">
                 <input
                   type="checkbox"
                   checked={inStockOnly}
                   onChange={(e) => setInStockOnly(e.target.checked)}
                   className="rounded text-emerald-700 focus:ring-emerald-700 h-4 w-4"
                 />
-                <span className="font-semibold">
+                <span className="font-semibold text-xs">
                   {locale === "bn" ? "শুধুমাত্র স্টকে থাকা পণ্য" : "In Stock Only"}
                 </span>
               </label>
 
               {/* Price Range Slider */}
               <div className="flex items-center gap-2">
-                <span>{locale === "bn" ? "সর্বোচ্চ মূল্য:" : "Max Price:"}</span>
+                <span className="text-xs">{locale === "bn" ? "সর্বোচ্চ:" : "Max:"}</span>
                 <input
                   type="range"
                   min="50"
@@ -230,7 +265,7 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
                   onChange={(e) => setMaxPrice(Number(e.target.value))}
                   className="accent-stone-900 w-24 sm:w-32 cursor-pointer"
                 />
-                <span className="font-bold text-stone-900">৳{formatNumber(maxPrice)}</span>
+                <span className="font-bold text-stone-900 text-xs">৳{formatNumber(maxPrice)}</span>
               </div>
 
               {/* Reset Action */}
@@ -238,16 +273,16 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
                 <button
                   type="button"
                   onClick={resetFilters}
-                  className="flex items-center gap-1 text-emerald-800 hover:text-emerald-950 font-bold ml-auto md:ml-0"
+                  className="flex items-center gap-1 text-emerald-800 hover:text-emerald-950 font-bold text-xs"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  <span>{locale === "bn" ? "ফিল্টার মুছুন" : "Reset"}</span>
+                  <span>{locale === "bn" ? "মুছুন" : "Reset"}</span>
                 </button>
               )}
             </div>
 
-            {/* Right: Sorting & Results Count */}
-            <div className="flex items-center justify-between md:justify-end gap-3 pt-2 md:pt-0 border-t md:border-t-0 border-stone-100">
+            {/* Desktop Sorting & Count */}
+            <div className="hidden md:flex items-center justify-end gap-3">
               <span className="text-xs text-stone-500 font-medium">
                 {formatNumber(filteredProducts.length)} {locale === "bn" ? "টি পণ্য" : "products"}
               </span>
@@ -259,18 +294,10 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
                   onChange={(e) => setSortBy(e.target.value as SortOption)}
                   className="text-xs font-semibold bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-stone-900"
                 >
-                  <option value="default">
-                    {locale === "bn" ? "বাছাই: সাধারণ" : "Sort: Default"}
-                  </option>
-                  <option value="price-asc">
-                    {locale === "bn" ? "দাম: কম থেকে বেশি" : "Price: Low to High"}
-                  </option>
-                  <option value="price-desc">
-                    {locale === "bn" ? "দাম: বেশি থেকে কম" : "Price: High to Low"}
-                  </option>
-                  <option value="name-asc">
-                    {locale === "bn" ? "নাম: ক থেকে ঁ" : "Name: A to Z"}
-                  </option>
+                  <option value="default">{locale === "bn" ? "বাছাই: সাধারণ" : "Sort: Default"}</option>
+                  <option value="price-asc">{locale === "bn" ? "দাম: কম থেকে বেশি" : "Price: Low to High"}</option>
+                  <option value="price-desc">{locale === "bn" ? "দাম: বেশি থেকে কম" : "Price: High to Low"}</option>
+                  <option value="name-asc">{locale === "bn" ? "নাম: ক থেকে ঁ" : "Name: A to Z"}</option>
                 </select>
               </div>
             </div>
@@ -279,8 +306,8 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
 
         {/* Product Collection Grid or Empty State */}
         {filteredProducts.length === 0 ? (
-          <div className="bg-white rounded-3xl p-12 text-center border border-stone-200 my-8">
-            <Layers className="w-12 h-12 text-stone-400 mx-auto mb-3 stroke-[1.5]" />
+          <div className="bg-white rounded-3xl p-8 sm:p-12 text-center border border-stone-200 my-6">
+            <Layers className="w-10 h-10 sm:w-12 sm:h-12 text-stone-400 mx-auto mb-3 stroke-[1.5]" />
             <h3 className="font-bold text-stone-900 text-base sm:text-lg">
               {locale === "bn"
                 ? "নির্বাচিত ফিল্টারে কোনো পণ্য পাওয়া যায়নি"
@@ -294,13 +321,13 @@ export function BrandStoreView({ brandId, locale }: BrandStoreViewProps) {
             <button
               type="button"
               onClick={resetFilters}
-              className="mt-5 px-5 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-bold shadow-xs hover:bg-stone-800 transition-colors"
+              className="mt-4 px-5 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-bold shadow-xs hover:bg-stone-800 transition-colors min-h-[42px]"
             >
               {locale === "bn" ? "সকল ফিল্টার রিসেট করুন" : "Reset All Filters"}
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-6">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} locale={locale} />
             ))}

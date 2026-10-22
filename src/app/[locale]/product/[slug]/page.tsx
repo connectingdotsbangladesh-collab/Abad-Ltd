@@ -19,9 +19,6 @@ import {
   Clock,
   ArrowLeft,
   Share2,
-  Leaf,
-  Wheat,
-  Milk,
   Info,
 } from "lucide-react";
 
@@ -90,10 +87,10 @@ export default function ProductDetailPage() {
   const categoryName = locale === "bn" ? product.categoryBn : product.categoryEn;
 
   return (
-    <div className="min-h-screen bg-[#FBF9F4] text-stone-900 pb-20">
+    <div className="min-h-screen bg-[#FBF9F4] text-stone-900 pb-28 lg:pb-20">
       {/* Breadcrumb Navigation */}
       <div className="border-b border-stone-200/80 bg-white/70">
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 py-3 text-xs text-stone-500 flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+        <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs text-stone-500 flex items-center gap-1.5 sm:gap-2 overflow-x-auto whitespace-nowrap scrollbar-none">
           <Link href={`/${locale}/store`} className="hover:text-emerald-800 transition-colors">
             {locale === "bn" ? "অনলাইন স্টোর" : "Store"}
           </Link>
@@ -107,16 +104,16 @@ export default function ProductDetailPage() {
           <span>/</span>
           <span className="text-stone-400">{categoryName}</span>
           <span>/</span>
-          <span className="font-bold text-stone-800 truncate max-w-xs">{name}</span>
+          <span className="font-bold text-stone-800 truncate max-w-[140px] sm:max-w-xs">{name}</span>
         </div>
       </div>
 
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
+      <div className="max-w-[1240px] mx-auto px-3.5 sm:px-6 pt-4 sm:pt-8">
         {/* Back Link */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <Link
             href={`/${locale}/${product.brand}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-600 hover:text-emerald-800 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-600 hover:text-emerald-800 transition-colors min-h-[36px]"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{locale === "bn" ? `${brandName} সংগ্রহে ফিরে যান` : `Back to ${brandName}`}</span>
@@ -124,11 +121,11 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Product Details Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
           {/* Left Column: Image Gallery */}
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-6 space-y-3 sm:space-y-4">
             {/* Main Image */}
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-md">
+            <div className="relative aspect-square rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-stone-200 shadow-xs">
               <Image
                 src={images[selectedImageIndex] || product.image}
                 alt={name}
@@ -138,9 +135,9 @@ export default function ProductDetailPage() {
               />
 
               {/* Brand Tag Top Left */}
-              <div className="absolute top-4 left-4 z-10">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
                 <span
-                  className={`text-xs font-bold px-3 py-1 rounded-full shadow-md text-white ${
+                  className={`text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md text-white ${
                     product.brand === "soteja"
                       ? "bg-emerald-600"
                       : product.brand === "rosod"
@@ -153,22 +150,22 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Demo Badge Top Right */}
-              <div className="absolute top-4 right-4 z-10">
-                <span className="text-[10px] font-bold px-2 py-1 rounded-md bg-stone-900/80 text-white backdrop-blur-xs">
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10">
+                <span className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded bg-stone-900/80 text-white backdrop-blur-xs">
                   {locale === "bn" ? "প্রদর্শনী ডেটা" : "Demo Data"}
                 </span>
               </div>
             </div>
 
-            {/* Thumbnail Gallery (if multiple) */}
+            {/* Thumbnail Gallery */}
             {images.length > 1 && (
-              <div className="flex items-center gap-3 overflow-x-auto pb-1">
+              <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-1 scrollbar-none">
                 {images.map((img, idx) => (
                   <button
                     key={idx}
                     type="button"
                     onClick={() => setSelectedImageIndex(idx)}
-                    className={`relative w-20 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
                       selectedImageIndex === idx
                         ? "border-emerald-700 ring-2 ring-emerald-700/20 shadow-xs"
                         : "border-stone-200 hover:border-stone-400"
@@ -181,24 +178,24 @@ export default function ProductDetailPage() {
             )}
 
             {/* Sourcing / Origin Box */}
-            <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-2xs space-y-2 text-xs text-stone-600">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-stone-200 shadow-2xs space-y-1.5 text-xs text-stone-600">
               <div className="flex items-center gap-2 font-bold text-stone-900">
                 <MapPin className="w-4 h-4 text-emerald-700" />
                 <span>{locale === "bn" ? "উৎপাদন ও সংগ্রহ অঞ্চল" : "Origin & Harvest Region"}</span>
               </div>
-              <p className="leading-relaxed pl-6">{origin}</p>
+              <p className="leading-relaxed pl-6 text-[11px] sm:text-xs">{origin}</p>
             </div>
           </div>
 
           {/* Right Column: Pricing, Pack selector, Actions */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-5">
             <div className="space-y-4">
               {/* Category & Title */}
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
                   {categoryName}
                 </span>
-                <h1 className="text-2xl sm:text-4xl font-black text-stone-900 mt-1 leading-tight">
+                <h1 className="text-xl sm:text-4xl font-black text-stone-900 mt-0.5 leading-snug">
                   {name}
                 </h1>
                 <p className="text-xs sm:text-sm text-stone-500 mt-1">
@@ -207,26 +204,26 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Price Banner */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-xs">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-3xl sm:text-4xl font-black text-stone-900">
+              <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs">
+                <div className="flex items-baseline gap-2.5 flex-wrap">
+                  <span className="text-2xl sm:text-4xl font-black text-stone-900">
                     ৳{formatNumber(activePack.price)}
                   </span>
                   {activePack.originalPrice && activePack.originalPrice > activePack.price && (
-                    <span className="text-lg text-stone-400 line-through">
+                    <span className="text-base sm:text-lg text-stone-400 line-through">
                       ৳{formatNumber(activePack.originalPrice)}
                     </span>
                   )}
                   {activePack.originalPrice && activePack.originalPrice > activePack.price && (
-                    <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                    <span className="text-[10px] sm:text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
                       {locale === "bn" ? "সাশ্রয়ী অফার" : "Special Price"}
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 mt-2 text-xs font-semibold">
+                <div className="flex items-center gap-2 mt-1.5 text-[11px] sm:text-xs font-semibold flex-wrap">
                   <span className="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
-                    <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
                     {locale === "bn" ? "স্টকে প্রস্তুত" : "In Stock"}
                   </span>
                   <span className="text-stone-300">•</span>
@@ -242,7 +239,7 @@ export default function ProductDetailPage() {
                   <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider">
                     {locale === "bn" ? "প্যাকের সাইজ / ওজন নির্বাচন করুন:" : "Select Pack Size / Weight:"}
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {product.packSizes.map((pack, idx) => {
                       const isSelected = selectedPackIndex === idx;
                       return (
@@ -250,13 +247,13 @@ export default function ProductDetailPage() {
                           key={pack.weight}
                           type="button"
                           onClick={() => setSelectedPackIndex(idx)}
-                          className={`p-3 rounded-xl border text-left transition-all ${
+                          className={`p-2.5 sm:p-3 rounded-xl border text-left transition-all min-h-[44px] ${
                             isSelected
-                              ? "bg-stone-900 text-white border-stone-900 shadow-sm"
+                              ? "bg-stone-900 text-white border-stone-900 shadow-xs"
                               : "bg-white text-stone-800 border-stone-200 hover:border-stone-400"
                           }`}
                         >
-                          <div className="text-xs font-bold">
+                          <div className="text-xs font-bold leading-tight">
                             {locale === "bn" ? pack.labelBn : pack.labelEn}
                           </div>
                           <div
@@ -274,25 +271,25 @@ export default function ProductDetailPage() {
               )}
 
               {/* Quantity Stepper & Add to Cart Action */}
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center gap-3">
+              <div className="space-y-2.5 pt-1">
+                <div className="flex items-center gap-2.5 sm:gap-3">
                   {/* Quantity Stepper */}
-                  <div className="flex items-center bg-white border border-stone-300 rounded-xl p-1 shadow-2xs">
+                  <div className="flex items-center bg-white border border-stone-300 rounded-xl p-1 shadow-2xs min-h-[44px]">
                     <button
                       type="button"
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors"
+                      className="p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors min-w-[36px] flex items-center justify-center"
                       aria-label="Decrease quantity"
                     >
                       <Minus className="w-4 h-4" />
                     </button>
-                    <span className="w-12 text-center text-sm font-bold text-stone-900">
+                    <span className="w-9 sm:w-12 text-center text-xs sm:text-sm font-bold text-stone-900">
                       {formatNumber(quantity)}
                     </span>
                     <button
                       type="button"
                       onClick={() => setQuantity(quantity + 1)}
-                      className="p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors"
+                      className="p-2 text-stone-600 hover:bg-stone-100 rounded-lg transition-colors min-w-[36px] flex items-center justify-center"
                       aria-label="Increase quantity"
                     >
                       <Plus className="w-4 h-4" />
@@ -304,7 +301,7 @@ export default function ProductDetailPage() {
                     type="button"
                     onClick={handleAddToCart}
                     disabled={!product.inStock}
-                    className={`flex-1 py-3.5 px-6 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all shadow-md active:scale-95 ${
+                    className={`flex-1 py-3 px-4 sm:py-3.5 sm:px-6 rounded-xl font-bold text-xs sm:text-base flex items-center justify-center gap-2 transition-all shadow-md active:scale-95 min-h-[44px] ${
                       addedRecently
                         ? "bg-emerald-600 text-white"
                         : "bg-emerald-700 hover:bg-emerald-800 text-white"
@@ -312,12 +309,12 @@ export default function ProductDetailPage() {
                   >
                     {addedRecently ? (
                       <>
-                        <Check className="w-5 h-5 stroke-[2.5]" />
-                        <span>{locale === "bn" ? "কার্টে যোগ হয়েছে!" : "Added to Cart!"}</span>
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
+                        <span>{locale === "bn" ? "কার্টে যোগ হয়েছে!" : "Added!"}</span>
                       </>
                     ) : (
                       <>
-                        <ShoppingCart className="w-5 h-5" />
+                        <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>
                           {locale === "bn"
                             ? `কার্টে যোগ করুন (৳${formatNumber(activePack.price * quantity)})`
@@ -331,10 +328,10 @@ export default function ProductDetailPage() {
                   <button
                     type="button"
                     onClick={handleShare}
-                    className="p-3.5 bg-white border border-stone-200 hover:border-stone-300 text-stone-700 rounded-xl transition-colors shadow-2xs"
+                    className="p-3 bg-white border border-stone-200 hover:border-stone-300 text-stone-700 rounded-xl transition-colors shadow-2xs min-h-[44px] min-w-[44px] flex items-center justify-center"
                     title={locale === "bn" ? "লিংক কপি করুন" : "Copy link"}
                   >
-                    <Share2 className="w-5 h-5" />
+                    <Share2 className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
 
@@ -346,64 +343,64 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Delivery and Guarantee Highlights */}
-              <div className="grid grid-cols-2 gap-3 pt-3 text-xs text-stone-600">
-                <div className="p-3 rounded-xl bg-white border border-stone-200 flex items-start gap-2.5">
+              <div className="grid grid-cols-2 gap-2.5 pt-2 text-xs text-stone-600">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-stone-200 flex items-start gap-2">
                   <Truck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-stone-900 block">
+                    <span className="font-bold text-stone-900 block text-[11px] sm:text-xs">
                       {locale === "bn" ? "ডেলিভারি সময়" : "Delivery Window"}
                     </span>
-                    <span>{deliveryConfig.estimatedHours} {locale === "bn" ? "ঘণ্টা" : "hours"}</span>
+                    <span className="text-[10px] sm:text-xs">{deliveryConfig.estimatedHours} {locale === "bn" ? "ঘণ্টা" : "hours"}</span>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-white border border-stone-200 flex items-start gap-2.5">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-stone-200 flex items-start gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-bold text-stone-900 block">
+                    <span className="font-bold text-stone-900 block text-[11px] sm:text-xs">
                       {locale === "bn" ? "ক্যাশ অন ডেলিভারি" : "Cash on Delivery"}
                     </span>
-                    <span>{locale === "bn" ? "পণ্য পেয়ে মূল্য পরিশোধ" : "Pay on arrival"}</span>
+                    <span className="text-[10px] sm:text-xs">{locale === "bn" ? "পণ্য পেয়ে মূল্য দিন" : "Pay on arrival"}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Storage Guidance Box */}
-            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-900 space-y-1">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-900 space-y-1">
               <div className="flex items-center gap-1.5 font-bold">
                 <Info className="w-4 h-4 text-amber-800" />
                 <span>{locale === "bn" ? "সঠিক সংরক্ষণ পদ্ধতি" : "Storage Guidance"}</span>
               </div>
-              <p className="leading-relaxed pl-5 text-amber-800/90">{storageGuidance}</p>
+              <p className="leading-relaxed pl-5 text-amber-800/90 text-[11px] sm:text-xs">{storageGuidance}</p>
             </div>
           </div>
         </div>
 
         {/* Product Detailed Description & Specifications */}
-        <div className="mt-12 bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-10 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-black text-stone-900 mb-4">
+        <div className="mt-8 sm:mt-12 bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 p-4 sm:p-10 shadow-2xs">
+          <h2 className="text-lg sm:text-2xl font-black text-stone-900 mb-3 sm:mb-4">
             {locale === "bn" ? "পণ্যের বিবরণ ও বৈশিষ্ট্য" : "Product Description & Details"}
           </h2>
-          <div className="prose prose-stone max-w-none text-xs sm:text-sm text-stone-600 leading-relaxed space-y-4">
+          <div className="prose prose-stone max-w-none text-xs sm:text-sm text-stone-600 leading-relaxed space-y-3">
             <p>{description}</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-stone-100 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-stone-100 text-xs">
             <div>
-              <span className="text-stone-400 block">{locale === "bn" ? "ব্র্যান্ড:" : "Brand:"}</span>
+              <span className="text-stone-400 block text-[11px]">{locale === "bn" ? "ব্র্যান্ড:" : "Brand:"}</span>
               <span className="font-bold text-stone-800">{brandName}</span>
             </div>
             <div>
-              <span className="text-stone-400 block">{locale === "bn" ? "ক্যাটাগরি:" : "Category:"}</span>
+              <span className="text-stone-400 block text-[11px]">{locale === "bn" ? "ক্যাটাগরি:" : "Category:"}</span>
               <span className="font-bold text-stone-800">{categoryName}</span>
             </div>
             <div>
-              <span className="text-stone-400 block">{locale === "bn" ? "নির্বাচিত ওজন:" : "Weight:"}</span>
+              <span className="text-stone-400 block text-[11px]">{locale === "bn" ? "প্যাক ওজন:" : "Weight:"}</span>
               <span className="font-bold text-stone-800">{activePack.weight}</span>
             </div>
             <div>
-              <span className="text-stone-400 block">{locale === "bn" ? "স্টক স্থিতি:" : "Status:"}</span>
+              <span className="text-stone-400 block text-[11px]">{locale === "bn" ? "স্টক স্থিতি:" : "Status:"}</span>
               <span className="font-bold text-emerald-700">
                 {product.inStock ? (locale === "bn" ? "স্টকে প্রস্তুত" : "In Stock") : (locale === "bn" ? "স্টক শেষ" : "Sold Out")}
               </span>
@@ -413,13 +410,13 @@ export default function ProductDetailPage() {
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <div className="mt-16">
-            <div className="flex items-center justify-between mb-6">
+          <div className="mt-10 sm:mt-16">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
                   {brandName}
                 </span>
-                <h3 className="text-2xl font-black text-stone-900 mt-0.5">
+                <h3 className="text-xl sm:text-2xl font-black text-stone-900 mt-0.5">
                   {locale === "bn" ? "সম্পর্কিত অন্যান্য পণ্য" : "Related Products"}
                 </h3>
               </div>
@@ -427,17 +424,82 @@ export default function ProductDetailPage() {
                 href={`/${locale}/${product.brand}`}
                 className="text-xs font-bold text-emerald-800 hover:underline"
               >
-                {locale === "bn" ? `সব ${brandName} পণ্য দেখুন →` : `View all ${brandName} →`}
+                {locale === "bn" ? `সব দেখুন →` : `View all →`}
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
               {relatedProducts.map((rel) => (
                 <ProductCard key={rel.id} product={rel} locale={locale} />
               ))}
             </div>
           </div>
         )}
+      </div>
+
+      {/* Mobile Sticky Bottom Add-to-Cart Bar */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-stone-200 px-3.5 py-2.5 z-40 shadow-xl flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[11px] text-stone-500 truncate leading-tight font-medium">
+            {activePack.labelBn || activePack.labelEn}
+          </div>
+          <div className="text-lg font-black text-stone-900 leading-tight">
+            ৳{formatNumber(activePack.price * quantity)}
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          {/* Mobile Stepper */}
+          <div className="flex items-center bg-stone-100 rounded-xl p-0.5 border border-stone-200">
+            <button
+              type="button"
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              className="p-1.5 text-stone-600 hover:bg-stone-200 rounded-lg min-w-[32px] min-h-[36px] flex items-center justify-center"
+              aria-label="Minus"
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+            <span className="w-6 text-center text-xs font-bold text-stone-900">
+              {formatNumber(quantity)}
+            </span>
+            <button
+              type="button"
+              onClick={() => setQuantity(quantity + 1)}
+              className="p-1.5 text-stone-600 hover:bg-stone-200 rounded-lg min-w-[32px] min-h-[36px] flex items-center justify-center"
+              aria-label="Plus"
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* Quick Add Button */}
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            disabled={!product.inStock}
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-1.5 shadow-md active:scale-95 transition-all min-h-[40px] ${
+              addedRecently
+                ? "bg-emerald-600"
+                : product.inStock
+                ? "bg-emerald-700 hover:bg-emerald-800"
+                : "bg-stone-300 text-stone-500 cursor-not-allowed"
+            }`}
+          >
+            {addedRecently ? (
+              <>
+                <Check className="w-4 h-4 stroke-[2.5]" />
+                <span>{locale === "bn" ? "যোগ হয়েছে" : "Added"}</span>
+              </>
+            ) : product.inStock ? (
+              <>
+                <ShoppingCart className="w-4 h-4" />
+                <span>{locale === "bn" ? "কিনুন" : "Add"}</span>
+              </>
+            ) : (
+              <span>{locale === "bn" ? "শেষ" : "Sold Out"}</span>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

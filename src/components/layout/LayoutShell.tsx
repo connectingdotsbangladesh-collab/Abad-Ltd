@@ -8,6 +8,7 @@ import { Footer } from "./Footer";
 import { StoreHeader } from "@/components/store/StoreHeader";
 import { StoreFooter } from "@/components/store/StoreFooter";
 import { CartDrawer } from "@/components/store/CartDrawer";
+import { MobileCartBar } from "@/components/store/MobileCartBar";
 import { CartProvider } from "@/lib/store/cart-context";
 
 interface LayoutShellProps {
@@ -53,6 +54,7 @@ export function LayoutShell({ locale, copy, children }: LayoutShellProps) {
         )}
 
         <CartDrawer locale={locale} />
+        {isStore && <MobileCartBar locale={locale} />}
       </div>
     </CartProvider>
   );

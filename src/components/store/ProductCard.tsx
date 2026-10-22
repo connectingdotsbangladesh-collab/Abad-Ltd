@@ -51,11 +51,11 @@ export function ProductCard({ product, locale }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative flex flex-col bg-white rounded-2xl border border-stone-200/90 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <div className="group relative flex flex-col bg-white rounded-2xl border border-stone-200/90 hover:border-emerald-500/50 hover:shadow-lg transition-all duration-300 overflow-hidden">
       {/* Brand & Badge Header */}
-      <div className="absolute top-3 inset-x-3 z-10 flex items-center justify-between pointer-events-none">
+      <div className="absolute top-2.5 inset-x-2.5 sm:top-3 sm:inset-x-3 z-10 flex items-center justify-between pointer-events-none gap-1">
         <span
-          className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-xs backdrop-blur-xs ${
+          className={`text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full shadow-xs backdrop-blur-xs leading-tight ${
             product.brand === "soteja"
               ? "bg-emerald-600 text-white"
               : product.brand === "rosod"
@@ -66,7 +66,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
           {brandName}
         </span>
         {badge && (
-          <span className="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-md bg-stone-900/80 text-white backdrop-blur-xs">
+          <span className="text-[9px] sm:text-[10px] font-semibold tracking-wide uppercase px-1.5 py-0.5 rounded bg-stone-900/80 text-white backdrop-blur-xs truncate max-w-[80px]">
             {badge}
           </span>
         )}
@@ -76,6 +76,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
       <Link
         href={`/${locale}/product/${product.slug}`}
         className="relative block w-full aspect-square bg-stone-100/60 overflow-hidden cursor-pointer"
+        aria-label={`${name} - ${activePack.labelBn || activePack.labelEn}`}
       >
         <Image
           src={imageError ? "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" : product.image}
@@ -85,7 +86,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
           className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
           onError={() => setImageError(true)}
         />
-        <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/10 transition-colors hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100">
           <span className="bg-white/90 text-stone-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-all">
             <Eye className="w-3.5 h-3.5" />
             {locale === "bn" ? "বিস্তারিত" : "Details"}
@@ -94,35 +95,35 @@ export function ProductCard({ product, locale }: ProductCardProps) {
       </Link>
 
       {/* Content */}
-      <div className="flex-1 flex flex-col p-3.5 sm:p-4 bg-stone-50/40">
-        <div className="mb-1">
-          <span className="text-[11px] font-medium text-stone-500">
+      <div className="flex-1 flex flex-col p-2.5 sm:p-4 bg-stone-50/40">
+        <div className="mb-0.5">
+          <span className="text-[10px] sm:text-[11px] font-medium text-stone-500 truncate block">
             {locale === "bn" ? product.categoryBn : product.categoryEn}
           </span>
         </div>
 
         <Link
           href={`/${locale}/product/${product.slug}`}
-          className="font-bold text-sm sm:text-base text-stone-900 hover:text-emerald-700 transition-colors line-clamp-1 mb-1"
+          className="font-bold text-xs sm:text-base text-stone-900 hover:text-emerald-700 transition-colors line-clamp-1 mb-0.5 leading-snug"
           title={name}
         >
           {name}
         </Link>
-        <p className="text-xs text-stone-500 line-clamp-1 mb-3">
+        <p className="text-[11px] sm:text-xs text-stone-500 line-clamp-1 mb-2">
           {subtitle}
         </p>
 
         {/* Pack Size Pills */}
         {product.packSizes && product.packSizes.length > 1 ? (
-          <div className="flex flex-wrap gap-1.5 mb-3">
+          <div className="flex flex-wrap gap-1 mb-2.5">
             {product.packSizes.map((pack, idx) => (
               <button
                 key={pack.weight}
                 type="button"
                 onClick={() => setSelectedPackIndex(idx)}
-                className={`text-[11px] font-medium px-2 py-0.5 rounded-md border transition-all ${
+                className={`text-[10px] sm:text-[11px] font-medium px-1.5 py-0.5 sm:px-2 rounded border transition-all ${
                   selectedPackIndex === idx
-                    ? "bg-stone-900 text-white border-stone-900 shadow-xs"
+                    ? "bg-stone-900 text-white border-stone-900 shadow-2xs"
                     : "bg-white text-stone-600 border-stone-200 hover:border-stone-400"
                 }`}
               >
@@ -131,20 +132,20 @@ export function ProductCard({ product, locale }: ProductCardProps) {
             ))}
           </div>
         ) : (
-          <div className="text-[11px] text-stone-500 mb-3">
+          <div className="text-[10px] sm:text-[11px] text-stone-500 mb-2.5 truncate">
             {locale === "bn" ? activePack.labelBn : activePack.labelEn}
           </div>
         )}
 
         {/* Pricing & Add to Cart */}
-        <div className="mt-auto pt-2 border-t border-stone-200/60 flex items-center justify-between gap-2">
-          <div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-base sm:text-lg font-bold text-stone-900">
+        <div className="mt-auto pt-2 border-t border-stone-200/60 flex items-center justify-between gap-1.5 sm:gap-2">
+          <div className="min-w-0">
+            <div className="flex items-baseline gap-1 flex-wrap">
+              <span className="text-sm sm:text-lg font-bold text-stone-900 leading-tight">
                 ৳{formatNumber(activePack.price)}
               </span>
               {activePack.originalPrice && activePack.originalPrice > activePack.price && (
-                <span className="text-xs text-stone-400 line-through">
+                <span className="text-[10px] sm:text-xs text-stone-400 line-through">
                   ৳{formatNumber(activePack.originalPrice)}
                 </span>
               )}
@@ -155,7 +156,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
             type="button"
             onClick={handleAddToCart}
             disabled={!product.inStock}
-            className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex items-center justify-center gap-1 px-2.5 py-2 sm:px-3 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all min-h-[38px] sm:min-h-[42px] shrink-0 ${
               addedRecently
                 ? "bg-emerald-600 text-white scale-95"
                 : product.inStock
@@ -166,16 +167,16 @@ export function ProductCard({ product, locale }: ProductCardProps) {
           >
             {addedRecently ? (
               <>
-                <Check className="w-4 h-4 stroke-[2.5]" />
-                <span className="hidden sm:inline">{locale === "bn" ? "যোগ হয়েছে" : "Added"}</span>
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
+                <span className="text-[11px] sm:text-xs font-bold">{locale === "bn" ? "যোগ" : "Done"}</span>
               </>
             ) : product.inStock ? (
               <>
-                <ShoppingCart className="w-4 h-4" />
-                <span>{locale === "bn" ? "কিনুন" : "Add"}</span>
+                <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span className="text-[11px] sm:text-xs font-bold">{locale === "bn" ? "কিনুন" : "Add"}</span>
               </>
             ) : (
-              <span>{locale === "bn" ? "স্টক শেষ" : "Sold Out"}</span>
+              <span className="text-[10px] sm:text-xs">{locale === "bn" ? "শেষ" : "Out"}</span>
             )}
           </button>
         </div>
