@@ -1,4 +1,4 @@
-﻿export type Locale = "bn" | "en";
+export type Locale = "bn" | "en";
 
 export interface NavItem {
   id: string;
@@ -58,6 +58,8 @@ export interface TeamMember {
   bio: string;
   responsibilities: string[];
   photo: string | null;
+  phone?: string;
+  email?: string;
 }
 
 export interface ArticleItem {

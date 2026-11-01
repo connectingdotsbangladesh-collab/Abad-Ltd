@@ -40,7 +40,7 @@
   "approvedTestimonials": [],
   "verifiedMetrics": [],
   "ownerReview": {
-    "teamEnglishSpellings": false,
+    "teamEnglishSpellings": true,
     "privacyAndTerms": false,
     "photographyRights": false,
     "serviceAvailability": false

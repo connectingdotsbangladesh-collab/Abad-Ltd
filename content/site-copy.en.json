@@ -246,18 +246,20 @@
       },
       {
         "id": "coo",
-        "nameBn": "ইউসুব ইলিয়াস",
-        "nameEn": "Yousub Ilias",
+        "nameBn": "পিকে ইউসুফ ইলিয়াস",
+        "nameEn": "Pk Yousub Elius",
         "role": "COO",
         "title": "Chief Operating Officer",
-        "bio": "Leads field operations, farmer relationships and supply coordination, connecting local hubs, transport arrangements and product quality processes.",
+        "bio": "Leads field operations, farmer relationships and supply coordination, connecting local hubs, transport arrangements and product quality processes across Bangladesh.",
         "responsibilities": [
           "Plan and coordinate district and upazila hubs with local agents and dealers toward the 64-district expansion goal.",
           "Coordinate the farm-to-buyer supply chain and owned or shared transport.",
           "Manage field implementation and training for contract farming, solar pumps, drip irrigation and new technologies.",
           "Oversee quality processes across collection, storage and delivery of agricultural produce and livestock."
         ],
-        "photo": null
+        "photo": "/team/coo.jpg",
+        "phone": "01913281705",
+        "email": "pkyousub88@gmail.com"
       },
       {
         "id": "cfo",

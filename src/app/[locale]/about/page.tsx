@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Locale } from "@/lib/types";
 import { getSiteCopy, getCompanyModel } from "@/lib/content";
-import { ShieldCheck, Target, Eye, Building2, TrendingUp, ChevronDown } from "lucide-react";
+import { ShieldCheck, Target, Eye, Building2, TrendingUp, ChevronDown, Phone, Mail } from "lucide-react";
 import { Accordion } from "@/components/ui/Accordion";
 
 interface AboutPageProps {
@@ -166,84 +166,116 @@ export default async function AboutPage({ params }: AboutPageProps) {
         </div>
       </div>
 
-      {/* Executive Leadership (CEO) */}
-      <div id="ceo" className="py-16 sm:py-24 max-w-[1200px] mx-auto px-4 sm:px-6">
-        <div className="mb-12">
+      {/* Executive Leadership (CEO & COO) */}
+      <div id="leadership" className="py-16 sm:py-24 max-w-[1200px] mx-auto px-4 sm:px-6">
+        <div id="ceo" className="mb-12">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-green">
             {isBn ? "নেতৃত্ব ও ব্যবস্থাপনা" : "Executive Leadership"}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy mt-2">
-            {isBn ? "প্রধান নির্বাহী কর্মকর্তা" : "Chief Executive Officer"}
+            {isBn ? "শীর্ষ নির্বাহী দল" : "Executive Leadership"}
           </h2>
           <p className="text-base text-muted mt-2 max-w-2xl">
             {isBn
-              ? "আবাদ লিমিটেডের সামগ্রিক ভিশন, ব্যবসায়িক দিকনির্দেশনা ও কৃষক-ক্রেতা অংশীদারিত্বের নেতৃত্ব।"
-              : "Guiding Abad Limited's corporate vision, enterprise strategy, and long-term ecosystem partnerships."}
+              ? "আবাদ লিমিটেডের সামগ্রিক ভিশন, ব্যবসায়িক অংশীদারিত্ব এবং মাঠ পর্যায়ের কৃষি সরবরাহ ব্যবস্থাপনায় আমাদের নেতৃত্ব।"
+              : "Leading Abad Limited's corporate vision, enterprise strategy, and field operations."}
           </p>
         </div>
 
-        {/* CEO Profile Card */}
-        {(() => {
-          const ceo = copy.about.team.find((m) => m.id === "ceo") || copy.about.team[0];
-          return (
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-border shadow-soft">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                {/* Photo & Role Lockup */}
-                <div className="lg:col-span-4 flex flex-col items-center sm:items-start">
-                  <div className="relative w-60 h-68 sm:w-64 sm:h-72 rounded-2xl overflow-hidden shadow-card border-2 border-white bg-slate-100 shrink-0">
-                    <Image
-                      src={ceo.photo || "/team/ceo.png"}
-                      alt={isBn ? ceo.nameBn : (ceo.nameEn || ceo.nameBn)}
-                      fill
-                      sizes="(max-width: 640px) 240px, 256px"
-                      priority
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div className="mt-4 text-center sm:text-left">
-                    <span className="text-xs font-bold uppercase tracking-widest text-brand-green">
-                      {ceo.role}
-                    </span>
-                    <h3 className="text-2xl font-bold text-brand-navy mt-0.5">
-                      {isBn ? ceo.nameBn : (ceo.nameEn || ceo.nameBn)}
-                    </h3>
-                    <p className="text-xs text-brand-green font-semibold mt-0.5">
-                      {ceo.title}
-                    </p>
+        {/* Leadership Profile Cards */}
+        <div className="space-y-8 sm:space-y-10">
+          {copy.about.team
+            .filter((m) => m.id === "ceo" || m.id === "coo")
+            .map((leader) => {
+              const displayName = isBn ? leader.nameBn : (leader.nameEn || leader.nameBn);
+              return (
+                <div
+                  key={leader.id}
+                  id={leader.id}
+                  className="bg-white rounded-3xl p-6 sm:p-10 border border-border shadow-soft"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                    {/* Photo & Role Lockup */}
+                    <div className="lg:col-span-4 flex flex-col items-center sm:items-start">
+                      <div className="relative w-56 h-64 sm:w-64 sm:h-72 rounded-2xl overflow-hidden shadow-card border-2 border-white bg-slate-100 shrink-0">
+                        <Image
+                          src={leader.photo || (leader.id === "ceo" ? "/team/ceo.png" : "/team/coo.jpg")}
+                          alt={displayName}
+                          fill
+                          sizes="(max-width: 640px) 224px, 256px"
+                          priority
+                          className="object-cover object-top"
+                        />
+                      </div>
+                      <div className="mt-4 text-center sm:text-left w-full">
+                        <span className="text-xs font-bold uppercase tracking-widest text-brand-green">
+                          {leader.role}
+                        </span>
+                        <h3 className="text-2xl font-bold text-brand-navy mt-0.5">
+                          {displayName}
+                        </h3>
+                        <p className="text-xs text-brand-green font-semibold mt-0.5">
+                          {leader.title}
+                        </p>
+
+                        {/* Direct Contact Links */}
+                        {(leader.phone || leader.email) && (
+                          <div className="mt-3.5 pt-3.5 border-t border-border flex flex-col gap-2 text-xs text-muted">
+                            {leader.phone && (
+                              <a
+                                href={`tel:${leader.phone}`}
+                                className="inline-flex items-center gap-2 text-ink hover:text-brand-green font-semibold transition-colors justify-center sm:justify-start"
+                              >
+                                <Phone className="w-4 h-4 text-brand-green shrink-0" />
+                                <span>{leader.phone}</span>
+                              </a>
+                            )}
+                            {leader.email && (
+                              <a
+                                href={`mailto:${leader.email}`}
+                                className="inline-flex items-center gap-2 text-ink hover:text-brand-green font-semibold transition-colors truncate justify-center sm:justify-start"
+                              >
+                                <Mail className="w-4 h-4 text-brand-green shrink-0" />
+                                <span className="truncate">{leader.email}</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Bio & Key Responsibilities */}
+                    <div className="lg:col-span-8 flex flex-col justify-between">
+                      <div>
+                        <h4 className="text-lg font-bold text-brand-navy mb-2">
+                          {isBn ? "কর্মপরিধি ও ভিশন" : "Scope & Vision"}
+                        </h4>
+                        <p className="text-sm sm:text-base text-ink/85 leading-relaxed mb-6">
+                          {leader.bio}
+                        </p>
+                      </div>
+
+                      <div className="pt-6 border-t border-border">
+                        <span className="text-xs font-bold uppercase tracking-wider text-brand-navy block mb-4">
+                          {isBn ? "মূল দায়িত্ব ও কৌশলগত অগ্রাধিকার:" : "Key Responsibilities & Strategic Priorities:"}
+                        </span>
+                        <ul className="space-y-3 text-sm text-ink/80">
+                          {leader.responsibilities.map((resp, i) => (
+                            <li key={i} className="flex items-start gap-3">
+                              <span className="w-5 h-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                                ✓
+                              </span>
+                              <span className="leading-relaxed">{resp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Bio & Key Responsibilities */}
-                <div className="lg:col-span-8 flex flex-col justify-between">
-                  <div>
-                    <h4 className="text-lg font-bold text-brand-navy mb-2">
-                      {isBn ? "কর্মপরিধি ও ভিশন" : "Scope & Vision"}
-                    </h4>
-                    <p className="text-sm sm:text-base text-ink/85 leading-relaxed mb-6">
-                      {ceo.bio}
-                    </p>
-                  </div>
-
-                  <div className="pt-6 border-t border-border">
-                    <span className="text-xs font-bold uppercase tracking-wider text-brand-navy block mb-4">
-                      {isBn ? "মূল দায়িত্ব ও কৌশলগত অগ্রাধিকার:" : "Key Responsibilities & Strategic Priorities:"}
-                    </span>
-                    <ul className="space-y-3 text-sm text-ink/80">
-                      {ceo.responsibilities.map((resp, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <span className="w-5 h-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                            ✓
-                          </span>
-                          <span className="leading-relaxed">{resp}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })()}
+              );
+            })}
+        </div>
       </div>
     </div>
   );
